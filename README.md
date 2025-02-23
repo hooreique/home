@@ -80,7 +80,7 @@ home-manager 구성을 클론한다.
 ```bash
 mkdir -p ~/.config/home-manager
 cd ~/.config/home-manager
-git clone git@github.com/hooreique/home .
+git clone git@github.com:hooreique/home.git .
 ```
 
 home-manager 최초 구성을 위해 다음을 실행한다.
