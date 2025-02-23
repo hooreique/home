@@ -57,9 +57,7 @@ nix-channel --list
 
 위 명령을 입력했을 때 다음과 같은 주소가 나타나지 않는다면,
 
-```plaintext
-nixpkgs https://nixos.org/channels/nixpkgs-unstable
-```
+> `nixpkgs https://nixos.org/channels/nixpkgs-unstable`
 
 다음과 같이 채널을 추가하자.
 
