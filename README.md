@@ -86,14 +86,12 @@ git clone https://github.com/hooreique/home.git .
 home-manager 최초 구성을 위해 다음을 실행한다.
 
 ```bash
-cd ~
 nix run nixpkgs#home-manager -- switch
 ```
 
 잘 구성되었다면 이제부터는 home-manager 명령을 직접 사용할 수 있으니 다음과 같이 사용하자.
 
 ```bash
-cd ~
 home-manager switch
 ```
 
