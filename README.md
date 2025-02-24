@@ -111,3 +111,24 @@ home-manager 구성은 당연하게도 처음부터 끝까지 지극히 개인�
     - sshd 를 데몬으로 쓰지 않고 필요할 때마다 직접 실행하는데 이때 필요한 옵션 (호스트 키 포함) 을 커맨드라인 옵션으로 매번 지정한다.
 - `hoobira.zsh-theme` 은 직접 만든 Zsh Theme 이다.
   - 그 내용을 보면 알 수 있듯이 `bira` 를 기반으로 만들었다.
+
+### WSL Stuff
+
+이 부분은 WSL Ubuntu-24.04 를 커스터마이징한 내용을 기록한 것이다.
+(별로 한 게 없고 이 구성과의 충돌 여지도 적을 것이지만)
+
+WSL Ubuntu-24.04 의 경우 언젠가부터 systemd 가 기본적으로 활성화 되게 업데이트 되어 (사실 확인 필요),
+새로 받게 되면 systemd 가 활성화 되어 있다.
+특별히 systemd 를 활용할 일이 없으므로 비활성화하였다.
+
+`/etc/wsl.conf` 에 있던 `systemd.enable` 속성을 지웠다. (이런 구성의 영향을 정확히 확인하지 않음)
+재부팅해야 적용된다.
+
+```ini{label=/etc/wsl.conf}
+# https://learn.microsoft.com/en-us/windows/wsl/wsl-config#interop-settings
+[interop]
+appendWindowsPath=false
+```
+
+호스트 (Windows) 에 의해 `PATH` 변수가 오염되는 것을 방지하고자
+`interop.appendWindowsPath` 속성을 `false` 로 지정했다.
