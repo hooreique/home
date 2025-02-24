@@ -124,7 +124,7 @@ WSL Ubuntu-24.04 의 경우 언젠가부터 systemd 가 기본적으로 활성�
 `/etc/wsl.conf` 에 있던 `systemd.enable` 속성을 지웠다. (이런 구성의 영향을 정확히 확인하지 않음)
 재부팅해야 적용된다.
 
-```ini{label=/etc/wsl.conf}
+```ini
 # https://learn.microsoft.com/en-us/windows/wsl/wsl-config#interop-settings
 [interop]
 appendWindowsPath=false
