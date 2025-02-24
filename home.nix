@@ -12,6 +12,8 @@
     pkgs.gh
     pkgs.vim
     pkgs.neovim
+    pkgs.gnused
+    pkgs.perl
 
     # nix language server
     pkgs.nil
