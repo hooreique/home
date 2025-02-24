@@ -14,6 +14,7 @@
     pkgs.neovim
     pkgs.gnused
     pkgs.perl
+    pkgs.lsof
 
     # nix language server
     pkgs.nil
