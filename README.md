@@ -119,11 +119,10 @@ home-manager 구성은 당연하게도 처음부터 끝까지 지극히 개인�
 
 WSL Ubuntu-24.04 의 경우 언젠부턴가 systemd 가 기본적으로 활성화 되게 업데이트 되어 (사실 확인 필요),
 새로 받게 되면 systemd 가 활성화 되어 있다.
-특별히 systemd 를 활용할 일이 없으므로 비활성화하였다.
-
-`/etc/wsl.conf` 에 있던 `boot.systemd` 속성을 지웠다. (이런 구성의 영향을 정확히 확인하지 않음)
-관련한 자세한 정보는 공식 문서를 참고 바란다. https://learn.microsoft.com/en-us/windows/wsl/systemd
+특별히 systemd 를 활용할 일이 없으므로 `/etc/wsl.conf` 에 있던 `boot.systemd` 속성을 지웠다.
 재부팅해야 적용된다.
+(이런 구성의 영향을 정확히 확인하지 않음)
+관련한 자세한 정보는 공식 문서를 참고 바란다. https://learn.microsoft.com/en-us/windows/wsl/systemd
 
 ```ini
 # https://learn.microsoft.com/en-us/windows/wsl/wsl-config#interop-settings
