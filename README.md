@@ -13,15 +13,15 @@ apt 등 시스템의 기본 패키지 매니저를 이용해서라도 Zsh 를 �
 Q. 왜 셸을 따로 설치하는가. home-manager 구성에 셸도 포함할 수 있지 않은가.
 A. `/usr/bin/zsh` 와 같이 셸에 직접 접근하는 것을 쉽게 하기 위함이다.
 
-### curl, xz-utils, git
+### curl, xz, git
 
-만일 시스템에서 curl 과 xz-utils 명령을 사용할 수 없다면
+만일 시스템에서 curl 과 xz 명령을 사용할 수 없다면
 Nix 설치가 제대로 진행되지 않는다.
 다음과 같이 해당 명령이 사용 가능한지 체크해보자.
 
 ```bash
 which curl
-which unzip
+which xz
 ```
 
 이 구성은 버전 컨트롤 하에 작업했기 때문에
