@@ -8,7 +8,6 @@
   home.packages = [
     pkgs.less
     pkgs.perl
-    pkgs.which
     pkgs.ncurses # clear, infocmp, tic
     pkgs.iproute2 # ip, ss
     pkgs.uutils-coreutils-noprefix # realpath
