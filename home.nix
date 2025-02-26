@@ -63,8 +63,10 @@
       VISUAL = "${pkgs.neovim}/bin/nvim";
     };
     shellAliases = {
-      nd = "${pkgs.nix}/bin/nix develop --command env SHELL=${pkgs.zsh}/bin/zsh ${pkgs.neovim}/bin/nvim";
-      ns = "${pkgs.nix}/bin/nix-shell --run 'SHELL=${pkgs.zsh}/bin/zsh ${pkgs.neovim}/bin/nvim'";
+      nd = ''
+        ${pkgs.nix}/bin/nix develop --command env SHELL=${pkgs.zsh}/bin/zsh ${pkgs.neovim}/bin/nvim'';
+      ns = ''
+        ${pkgs.nix}/bin/nix-shell --run "SHELL=${pkgs.zsh}/bin/zsh ${pkgs.neovim}/bin/nvim"'';
     };
     oh-my-zsh = {
       enable = true;
