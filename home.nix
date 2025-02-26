@@ -63,6 +63,8 @@
       VISUAL = "${pkgs.neovim}/bin/nvim";
     };
     shellAliases = {
+      grep = "grep --color=auto";
+      ls = "ls --color=auto";
       nd = ''
         ${pkgs.nix}/bin/nix develop --command env SHELL=${pkgs.zsh}/bin/zsh ${pkgs.neovim}/bin/nvim'';
       ns = ''
