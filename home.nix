@@ -6,15 +6,16 @@
   home.stateVersion = "24.11";
 
   home.packages = [
-    pkgs.ncurses
-    pkgs.uutils-coreutils-noprefix
+    pkgs.less
+    pkgs.perl
+    pkgs.which
+    pkgs.ncurses # clear, infocmp, tic
+    pkgs.iproute2 # ip, ss
+    pkgs.uutils-coreutils-noprefix # realpath
     pkgs.openssh
     pkgs.gh
     pkgs.vim
     pkgs.neovim
-    pkgs.gnused
-    pkgs.perl
-    pkgs.lsof
 
     # nix language server
     pkgs.nil
@@ -36,8 +37,8 @@
     pkgs.wget
     pkgs.unzip
 
-    pkgs.vscode-langservers-extracted
-    pkgs.vscode-js-debug
+    pkgs.vscode-langservers-extracted # vscode-json-language-server
+    pkgs.vscode-js-debug # js-debug
   ];
 
   home.file.".hushlogin".text = "";
