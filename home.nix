@@ -56,7 +56,6 @@
   programs.zsh = {
     enable = true;
     autosuggestion.enable = true;
-    profileExtra = builtins.readFile ./init.zsh;
     sessionVariables = {
       LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
       SHELL = "${pkgs.zsh}/bin/zsh";
@@ -73,6 +72,8 @@
       plugins = [ "git" ];
       custom = "$HOME/omz-custom";
     };
+    envExtra = builtins.readFile ./zshenv;
+    initExtra = builtins.readFile ./zshrc;
   };
 
   programs.zoxide = {

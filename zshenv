@@ -9,8 +9,3 @@ fi
 if [[ ! -f ~/.ssh/host_ed25519 ]]; then
   ssh-keygen -t ed25519 -f ~/.ssh/host_ed25519 -N ""
 fi
-
-# Run extra mutable profile
-if [[ -f ~/profile.zsh ]]; then
-  source ~/profile.zsh
-fi
