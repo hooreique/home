@@ -9,7 +9,6 @@
     pkgs.less
     pkgs.perl
     pkgs.ncurses # clear, infocmp, tic
-    pkgs.iproute2 # ip, ss
     pkgs.uutils-coreutils-noprefix # realpath
     pkgs.openssh
     pkgs.gh
