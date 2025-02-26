@@ -130,5 +130,17 @@ WSL Ubuntu-24.04 의 경우 언젠부턴가 systemd 가 기본적으로 활성�
 appendWindowsPath=false
 ```
 
-호스트 (Windows) 에 의해 `PATH` 변수가 오염되는 것을 방지하고자
+호스트 (Windows) 에 의해 `PATH` 환경 변수가 오염되는 것을 방지하고자
 `interop.appendWindowsPath` 속성을 `false` 로 지정했다.
+
+### macOS Stuff
+
+`/etc/zprofile` 을 보면
+
+> `eval $(/usr/libexec/path_helper -s)`
+
+이런 부분이 있는데 실행해보면 알겠지만
+보안 때문인지 macOS 는 기본적으로 `PATH` 환경 변수를 쉘 로그인시 세팅하고 있다.
+
+Linux 환경과의 유사성을 극대화 하고자 이 부분을 주석처리하여 `PATH` 를 깔끔하게 유지했다.
+보안에는 스스로 좀 더 신경 써야 할 것이다.
