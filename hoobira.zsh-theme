@@ -1,7 +1,5 @@
 # The name of this theme, _hoobira_, means the _hoo_ mod of _bira_.
 # This theme was inspired by _bira_, a built-in theme of _oh-my-zsh_.
-# To use this theme, put this file in the `~/.oh-my-zsh/custom/themes/`
-# directory, and set `ZSH_THEME="hoobira"` in `~/.zshrc` file.
 
 local return_code_symbol="%(?.○.●)"
 local user_host="%(!.%{$fg[red]%}.%{$fg[green]%})%n@%m%{$reset_color%}"
