@@ -55,12 +55,37 @@
   programs.zsh = {
     enable = true;
     autosuggestion.enable = true;
+    oh-my-zsh = {
+      enable = true;
+      theme = "hoobira";
+      plugins = [ "git" ];
+      custom = "$HOME/omz-custom";
+    };
     sessionVariables = {
       LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
       SHELL = "${pkgs.zsh}/bin/zsh";
       EDITOR = "${pkgs.neovim}/bin/nvim";
       VISUAL = "${pkgs.neovim}/bin/nvim";
     };
+    envExtra = ''
+      # Nix (Single user env prefered)
+      if [[ -f ~/.nix-profile/etc/profile.d/nix.sh ]]; then
+        source ~/.nix-profile/etc/profile.d/nix.sh
+      elif [[ -f /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh ]]; then
+        source /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
+      fi
+
+      # Generate random key for sshd
+      if [[ ! -f ~/.ssh/host_ed25519 ]]; then
+        ssh-keygen -t ed25519 -f ~/.ssh/host_ed25519 -N ""
+      fi
+    '';
+    initExtra = ''
+      # Run extra rc
+      if [[ -f ~/init.zsh ]]; then
+        source ~/init.zsh
+      fi
+    '';
     shellAliases = {
       grep = "grep --color=auto";
       ls = "ls --color=auto";
@@ -69,14 +94,6 @@
       ns = ''
         ${pkgs.nix}/bin/nix-shell --run "SHELL=${pkgs.zsh}/bin/zsh ${pkgs.neovim}/bin/nvim"'';
     };
-    oh-my-zsh = {
-      enable = true;
-      theme = "hoobira";
-      plugins = [ "git" ];
-      custom = "$HOME/omz-custom";
-    };
-    envExtra = builtins.readFile ./zshenv;
-    initExtra = builtins.readFile ./zshrc;
   };
 
   programs.zoxide = {
