@@ -1,4 +1,4 @@
-{ pkgs, currSys, ... }:
+{ pkgs, currSys, nvimNightly, ... }:
 
 {
   home.username = "song";
@@ -13,7 +13,7 @@
     pkgs.openssh
     pkgs.gh
     pkgs.vim
-    pkgs.neovim
+    nvimNightly
 
     # nix language server
     pkgs.nil
@@ -64,8 +64,8 @@
     sessionVariables = {
       LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
       SHELL = "${pkgs.zsh}/bin/zsh";
-      EDITOR = "${pkgs.neovim}/bin/nvim";
-      VISUAL = "${pkgs.neovim}/bin/nvim";
+      EDITOR = "${nvimNightly}/bin/nvim";
+      VISUAL = "${nvimNightly}/bin/nvim";
     };
     envExtra = ''
       # Nix (Single user env prefered)
@@ -90,9 +90,9 @@
       grep = "grep --color=auto";
       ls = "ls --color=auto";
       nd = ''
-        ${pkgs.nix}/bin/nix develop --command env SHELL=${pkgs.zsh}/bin/zsh ${pkgs.neovim}/bin/nvim'';
+        ${pkgs.nix}/bin/nix develop --command env SHELL=${pkgs.zsh}/bin/zsh ${nvimNightly}/bin/nvim'';
       ns = ''
-        ${pkgs.nix}/bin/nix-shell --run "SHELL=${pkgs.zsh}/bin/zsh ${pkgs.neovim}/bin/nvim"'';
+        ${pkgs.nix}/bin/nix-shell --run "SHELL=${pkgs.zsh}/bin/zsh ${nvimNightly}/bin/nvim"'';
     };
   };
 
