@@ -11,7 +11,6 @@
     pkgs.ncurses # clear, infocmp, tic
     pkgs.uutils-coreutils-noprefix # realpath
     pkgs.openssh
-    pkgs.gh
     pkgs.vim
     nvimNightly
 
