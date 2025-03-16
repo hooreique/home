@@ -1,6 +1,6 @@
 개인용 크로스플랫폼 (Linux and macOS) home-manager 구성
 
-WSL (Ubuntu-24.04), macOS Sequoia 15.3.1 에 대해서만 정상 작동을 확인했다.
+WSL (Ubuntu-24.04), macOS Sequoia 15.3.2 에 대해 정상 작동을 확인했다.
 
 ## Prerequisites
 
