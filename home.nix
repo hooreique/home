@@ -93,7 +93,7 @@
       ns = ''
         ${pkgs.nix}/bin/nix-shell --run "SHELL=${pkgs.zsh}/bin/zsh ${pkgs.neovim}/bin/nvim"'';
       nz = ''
-        ${pkgs.nix}/bin/nix develop --command env SHELL=${pkgs.zsh}/bin/zsh RPS1=" devShell" zsh'';
+        ${pkgs.nix}/bin/nix develop --command env SHELL=${pkgs.zsh}/bin/zsh RPS1=" devShell" ${pkgs.zsh}/bin/zsh'';
     };
   };
 
