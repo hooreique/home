@@ -10,6 +10,7 @@
     pkgs.perl
     pkgs.ncurses # clear, infocmp, tic
     pkgs.uutils-coreutils-noprefix # realpath
+    pkgs.jq
     pkgs.openssh
     pkgs.vim
     pkgs.neovim
