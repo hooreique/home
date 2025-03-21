@@ -9,7 +9,6 @@
     pkgs.less
     pkgs.perl
     pkgs.jq
-    pkgs.unixtools.column
     pkgs.ncurses # clear, infocmp, tic
     pkgs.uutils-coreutils-noprefix # realpath
     pkgs.openssh
