@@ -1,6 +1,6 @@
 개인용 크로스플랫폼 (Linux and macOS) home-manager 구성
 
-WSL (Ubuntu-24.04), macOS Sequoia 15.3.2 에 대해 정상 작동을 확인했다.
+WSL (Ubuntu-24.04), macOS Sequoia 15.4 에 대해 정상 작동을 확인했다.
 
 ## Prerequisites
 
@@ -156,5 +156,5 @@ appendWindowsPath=false
 
 Linux 환경과의 유사성을 극대화 하고자 이 부분을 주석처리하여 `PATH` 를 깔끔하게 유지했다.
 보안에는 스스로 좀 더 신경 써야 할 것이다.
-macOS 업그레이드를 하면 `/etc/zprofile` 이 복원된다.
+macOS 를 업데이트하면 `/etc/zprofile` 이 복원된다.
 사실 있어도 크게 문제는 아니기 때문에 생각날 때 한 번씩 없애주는 식으로 만족하려고 한다.
