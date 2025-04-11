@@ -80,6 +80,10 @@
       fi
     '';
     initExtra = ''
+      unalias la  2> /dev/null
+      unalias ll  2> /dev/null
+      unalias lsa 2> /dev/null
+
       # Run extra rc
       if [[ -f ~/init.zsh ]]; then
         source ~/init.zsh
@@ -87,6 +91,7 @@
     '';
     shellAliases = {
       grep = "grep --color=auto";
+      l = "ls --color=auto -A";
       ls = "ls --color=auto";
       nd = ''
         ${pkgs.nix}/bin/nix develop --command env SHELL=${pkgs.zsh}/bin/zsh ${pkgs.neovim}/bin/nvim'';
