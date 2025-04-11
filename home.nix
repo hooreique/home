@@ -14,6 +14,7 @@
     pkgs.openssh
     pkgs.vim
     pkgs.neovim
+    pkgs.elinks
 
     # nix language server
     pkgs.nil
