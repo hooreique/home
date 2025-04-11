@@ -58,7 +58,6 @@
     oh-my-zsh = {
       enable = true;
       theme = "hoobira";
-      plugins = [ "git" ];
       custom = "$HOME/omz-custom";
     };
     sessionVariables = {
