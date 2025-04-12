@@ -78,7 +78,7 @@
 
       # Generate random key for sshd
       if [[ ! -f ~/.ssh/host_ed25519 ]]; then
-        ssh-keygen -t ed25519 -f ~/.ssh/host_ed25519 -N ""
+        ${pkgs.openssh}/bin/ssh-keygen -t ed25519 -f ~/.ssh/host_ed25519 -N ""
       fi
     '';
     initExtra = ''
