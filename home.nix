@@ -82,7 +82,6 @@
       fi
     '';
     initExtra = ''
-      unalias la  2> /dev/null
       unalias ll  2> /dev/null
       unalias lsa 2> /dev/null
 
@@ -93,7 +92,8 @@
     '';
     shellAliases = {
       grep = "grep --color=auto";
-      l = "ls --color=auto -A";
+      l = "ls --color=auto --almost-all";
+      la = "ls --color=auto --almost-all --long --human-readable";
       ls = "ls --color=auto";
       nd = ''
         ${pkgs.nix}/bin/nix develop --command env SHELL=${pkgs.zsh}/bin/zsh ${pkgs.neovim}/bin/nvim'';
