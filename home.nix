@@ -86,6 +86,25 @@
       unalias ll  2> /dev/null
       unalias lsa 2> /dev/null
 
+      nman() {
+        if [ $# -ne 1 ]; then
+          echo "Usage: nman <entry>" >&2
+          return 1
+        fi
+
+        if [[ ! "$1" =~ "^[-._()0-9a-zA-Z]+$" ]]; then
+          echo "Invalid entry name: $1" >&2
+          return 1
+        fi
+
+        if man -w "$1" >/dev/null 2>&1; then
+          nvim +"Man $1 | wincmd w | bdelete"
+        else
+          echo "Entry not found: $1" >&2
+          return 1
+        fi
+      }
+
       # Run extra rc
       if [[ -f ~/init.zsh ]]; then
         source ~/init.zsh
