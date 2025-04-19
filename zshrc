@@ -2,8 +2,7 @@ unalias ll  2> /dev/null
 unalias lsa 2> /dev/null
 
 # Notify mac PATH pollution
-if grep --quiet '^[[:space:]]*[^#]' /etc/zprofile 2> /dev/null
-then
+if grep --quiet '^[[:space:]]*[^#]' /etc/zprofile 2> /dev/null; then
   echo "PATH: $PATH
 
 You might want to sudo --edit /etc/zprofile"
