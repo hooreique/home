@@ -38,6 +38,29 @@
         "type": "github"
       }
     },
+    "lepo": {
+      "inputs": {
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1745048095,
+        "narHash": "sha256-svuoK5RiESXccLOVYpwjSx3Dmp5iLYqDHvKdW9+HDiA=",
+        "owner": "lepo-cli",
+        "repo": "lepo",
+        "rev": "f4f3bc9488c29a9cea6468caea163758955eaa8f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "lepo-cli",
+        "repo": "lepo",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1742069588,
@@ -58,6 +81,7 @@
       "inputs": {
         "flake-utils": "flake-utils",
         "home-manager": "home-manager",
+        "lepo": "lepo",
         "nixpkgs": "nixpkgs"
       }
     },

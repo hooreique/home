@@ -6,6 +6,8 @@
   home.stateVersion = "24.11";
 
   home.packages = [
+    pkgs.lepo
+
     pkgs.less
     pkgs.perl
     pkgs.jq
