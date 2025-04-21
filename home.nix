@@ -2,7 +2,8 @@
 
 {
   home.username = "song";
-  home.homeDirectory = if currSys == "aarch64-darwin" then "/Users/song" else "/home/song";
+  home.homeDirectory =
+    if currSys == "aarch64-darwin" then "/Users/song" else "/home/song";
   home.stateVersion = "24.11";
 
   home.packages = [
