@@ -12,7 +12,7 @@
     pkgs.perl
     pkgs.jq
     pkgs.ncurses # clear, infocmp, tic
-    pkgs.uutils-coreutils-noprefix # realpath
+    pkgs.uutils-coreutils-noprefix # cat, cp, mkdir ...
     pkgs.openssh
     pkgs.vim
     pkgs.neovim
