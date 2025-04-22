@@ -88,8 +88,8 @@
     initExtra = builtins.readFile ./zshrc;
     shellAliases = {
       grep = "grep --color=auto";
-      l = "ls --color=auto --almost-all";
-      la = "ls --color=auto --almost-all --long --human-readable";
+      l = "eza --almost-all --icons=auto";
+      la = "eza --almost-all --long --icons=auto --time-style=iso";
       ls = "ls --color=auto";
       nd = ''
         ${pkgs.nix}/bin/nix develop --command env SHELL=${pkgs.zsh}/bin/zsh ${pkgs.neovim}/bin/nvim'';
@@ -99,6 +99,8 @@
         ${pkgs.nix}/bin/nix develop --command env SHELL=${pkgs.zsh}/bin/zsh RPS1=" devShell" ${pkgs.zsh}/bin/zsh'';
     };
   };
+
+  programs.eza.enable = true;
 
   programs.zoxide = {
     enable = true;
