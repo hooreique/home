@@ -71,6 +71,8 @@
       SHELL = "${pkgs.zsh}/bin/zsh";
       EDITOR = "${pkgs.neovim}/bin/nvim";
       VISUAL = "${pkgs.neovim}/bin/nvim";
+      LANG = "en_US.UTF-8";
+      LC_CTYPE = "en_US.UTF-8";
     };
     envExtra = ''
       # Nix (Single user env prefered)
