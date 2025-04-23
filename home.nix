@@ -57,6 +57,34 @@
     matchBlocks."*".identityFile = "~/.ssh/id_ed25519";
   };
 
+  programs.zellij = {
+    enable = true;
+    enableZshIntegration = true;
+    settings = {
+      simplified_ui = true;
+      pane_frames = false;
+      default_layout = "compact";
+      session_serialization = false;
+      on_force_close = "quit";
+      theme = "sonokai";
+      themes.sonokai = {
+        # github.com/sainnhe/sonokai
+        # Atlantis vari.
+        fg      = "#e1e3e4";
+        bg      = "#424b5b"; # bg4
+        black   = "#333846"; # bg1
+        red     = "#ff6578";
+        green   = "#9dd274";
+        yellow  = "#eacb64";
+        blue    = "#72cce8";
+        magenta = "#ba9cf3"; # purple
+        cyan    = "#72cce8"; # blue
+        white   = "#e1e3e4"; # fg
+        orange  = "#f69c5e";
+      };
+    };
+  };
+
   programs.zsh = {
     enable = true;
     autosuggestion.enable = true;
