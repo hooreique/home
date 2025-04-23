@@ -101,6 +101,7 @@
       VISUAL = "${pkgs.neovim}/bin/nvim";
       LANG = "en_US.UTF-8";
       LC_CTYPE = "en_US.UTF-8";
+      ZELLIJ = "-1";
     };
     envExtra = ''
       # Nix (Single user env prefered)
