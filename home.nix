@@ -105,6 +105,7 @@
       l = "eza --almost-all --icons=auto";
       la = "eza --almost-all --long --icons=auto --time-style=iso";
       ls = "ls --color=auto";
+      lg = "lazygit";
       nd = ''
         ${pkgs.nix}/bin/nix develop --command env SHELL=${pkgs.zsh}/bin/zsh ${pkgs.neovim}/bin/nvim'';
       ns = ''
