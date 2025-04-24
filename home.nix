@@ -57,33 +57,16 @@
     matchBlocks."*".identityFile = "~/.ssh/id_ed25519";
   };
 
-  programs.zellij = {
-    enable = true;
-    enableZshIntegration = true;
-    settings = {
-      simplified_ui = true;
-      pane_frames = false;
-      default_layout = "compact";
-      session_serialization = false;
-      on_force_close = "quit";
-      theme = "sonokai";
-      themes.sonokai = {
-        # github.com/sainnhe/sonokai
-        # Atlantis vari.
-        fg      = "#e1e3e4";
-        bg      = "#424b5b"; # bg4
-        black   = "#333846"; # bg1
-        red     = "#ff6578";
-        green   = "#9dd274";
-        yellow  = "#eacb64";
-        blue    = "#72cce8";
-        magenta = "#ba9cf3"; # purple
-        cyan    = "#72cce8"; # blue
-        white   = "#e1e3e4"; # fg
-        orange  = "#f69c5e";
-      };
-    };
-  };
+  programs.zellij.enable = true;
+  xdg.configFile."zellij/config.kdl".source = ./zellij.kdl;
+  xdg.configFile."zellij/layouts/compact.kdl".text = ''
+    layout {
+      pane
+      pane size=1 borderless=true {
+        plugin location="compact-bar"
+      }
+    }
+  '';
 
   programs.zsh = {
     enable = true;
@@ -101,7 +84,7 @@
       VISUAL = "${pkgs.neovim}/bin/nvim";
       LANG = "en_US.UTF-8";
       LC_CTYPE = "en_US.UTF-8";
-      ZELLIJ = "-1";
+      ZELLIJ = "i-dont-want-it-to-autostart";
     };
     envExtra = ''
       # Nix (Single user env prefered)

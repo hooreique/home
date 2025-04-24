@@ -1,0 +1,67 @@
+session_serialization false
+on_force_close        "quit"
+
+pane_frames           false
+simplified_ui         true
+default_layout        "compact"
+
+theme "sonokai"
+themes {
+  sonokai {
+    bg      "#424b5b"
+    black   "#333846"
+    blue    "#72cce8"
+    cyan    "#7ad5f1"
+    fg      "#e1e3e4"
+    green   "#a5e179"
+    magenta "#ba9cf3"
+    orange  "#f69c5e"
+    red     "#ff6d7e"
+    white   "#e1e3e4"
+    yellow  "#eacb64"
+  }
+}
+
+keybinds clear-defaults=true {
+  normal {
+    bind "Alt d" { Detach; }
+
+    bind "Alt a" { SwitchToMode "resize"; }
+
+    bind "Alt o" {
+      LaunchOrFocusPlugin "session-manager" {
+        floating true
+        move_to_focused_tab true
+      };
+    }
+
+    bind "Alt p" { NewTab; }
+    bind "Alt 1" { GoToTab 1; }
+    bind "Alt 2" { GoToTab 2; }
+    bind "Alt 3" { GoToTab 3; }
+    bind "Alt 4" { GoToTab 4; }
+    bind "Alt 5" { GoToTab 5; }
+    bind "Alt 6" { GoToTab 6; }
+    bind "Alt 7" { GoToTab 7; }
+    bind "Alt 8" { GoToTab 8; }
+    bind "Alt 9" { GoToTab 9; }
+    bind "Alt l" { GoToPreviousTab; }
+    bind "Alt y" { GoToNextTab; }
+
+    bind "Alt s" { NewPane "Down"; }
+    bind "Alt t" { NewPane "Right"; }
+    bind "Alt u" { MoveFocus "Up"; }
+    bind "Alt e" { MoveFocus "Down"; }
+    bind "Alt n" { MoveFocus "Left"; }
+    bind "Alt i" { MoveFocus "Right"; }
+  }
+
+  resize {
+    bind "Esc" { SwitchToMode "normal"; }
+
+    bind "u" { Resize "Increase Up"; }
+    bind "e" { Resize "Increase Down"; }
+    bind "n" { Resize "Increase Left"; }
+    bind "i" { Resize "Increase Right"; }
+  }
+}
