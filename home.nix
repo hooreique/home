@@ -15,6 +15,7 @@
     pkgs.ncurses # clear, infocmp, tic
     pkgs.uutils-coreutils-noprefix # cat, cp, mkdir ...
     pkgs.openssh
+    pkgs.zellij
     pkgs.vim
     pkgs.neovim
     pkgs.curl
@@ -48,16 +49,6 @@
 
   home.file."omz-custom/themes/hoobira.zsh-theme".source = ./hoobira.zsh-theme;
 
-  programs.home-manager.enable = true;
-
-  programs.ssh = {
-    enable = true;
-    serverAliveInterval = 60;
-    serverAliveCountMax = 3;
-    matchBlocks."*".identityFile = "~/.ssh/id_ed25519";
-  };
-
-  programs.zellij.enable = true;
   xdg.configFile."zellij/config.kdl".source = ./zellij.kdl;
   xdg.configFile."zellij/layouts/compact.kdl".text = ''
     layout {
@@ -67,6 +58,15 @@
       }
     }
   '';
+
+  programs.home-manager.enable = true;
+
+  programs.ssh = {
+    enable = true;
+    serverAliveInterval = 60;
+    serverAliveCountMax = 3;
+    matchBlocks."*".identityFile = "~/.ssh/id_ed25519";
+  };
 
   programs.zsh = {
     enable = true;
@@ -84,7 +84,6 @@
       VISUAL = "${pkgs.neovim}/bin/nvim";
       LANG = "en_US.UTF-8";
       LC_CTYPE = "en_US.UTF-8";
-      ZELLIJ = "i-dont-want-it-to-autostart";
     };
     envExtra = ''
       # Nix (Single user env prefered)
