@@ -57,6 +57,7 @@ keybinds clear-defaults=true {
 
   resize {
     bind "Esc" { SwitchToMode "normal"; }
+    bind "q"   { SwitchToMode "normal"; }
 
     bind "u" { Resize "Increase Up"; }
     bind "e" { Resize "Increase Down"; }
