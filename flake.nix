@@ -23,7 +23,7 @@
         pkgs = import nixpkgs {
           system = system;
           overlays = [
-            (final: prev: { lepo = lepo.defaultPackage.${system}; })
+            (final: prev: { lepo = lepo.packages.${system}.default; })
           ];
         };
         extraSpecialArgs = {
