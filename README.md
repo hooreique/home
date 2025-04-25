@@ -83,6 +83,14 @@ mkdir -p ~/.config/nix
 echo 'experimental-features = nix-command flakes' > ~/.config/nix/nix.conf
 ```
 
+workaround: lepo (https://github.com/lepo-cli/lepo) 라는 직접 Nix 로 패키징한
+프로그램을 가져오고 있는데 이것을 빌드하기 위해서는 sandbox 해제가 필요하다.
+의존하는 도구인 Deno 가 Nix 에 아직 잘 통합되어 있지 않은 탓이다.
+
+```bash
+echo 'sandbox = relaxed' >> ~/.config/nix/nix.conf
+```
+
 ### Bootstrap
 
 home-manager 구성을 클론한다.
