@@ -1,5 +1,4 @@
 session_serialization false
-on_force_close        "quit"
 
 pane_frames           false
 simplified_ui         true
