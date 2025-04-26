@@ -15,15 +15,15 @@
     };
   };
 
-  outputs = {
-    self, nixpkgs, flake-utils, home-manager, lepo
-  }: flake-utils.lib.eachSystem [ "x86_64-linux" "aarch64-darwin" ] (system: {
+  outputs = inputs: inputs.flake-utils.lib.eachSystem [
+    "x86_64-linux" "aarch64-darwin"
+  ] (system: {
     packages.homeConfigurations = {
-      song = home-manager.lib.homeManagerConfiguration {
-        pkgs = import nixpkgs {
+      song = inputs.home-manager.lib.homeManagerConfiguration {
+        pkgs = import inputs.nixpkgs {
           system = system;
           overlays = [
-            (final: prev: { lepo = lepo.packages.${system}.default; })
+            (final: prev: { lepo = inputs.lepo.packages.${system}.default; })
           ];
         };
         extraSpecialArgs = {
