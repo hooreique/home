@@ -48,11 +48,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1745568248,
-        "narHash": "sha256-Gdhsausi92SIQykWWvBRv5qqImXyH5CgPvZgIZ9Mf9s=",
+        "lastModified": 1745635009,
+        "narHash": "sha256-Gs+j+LPRTtcSc/eih5OQQ2jVhbqxEvdPwiZMzQxhNNI=",
         "owner": "lepo-cli",
         "repo": "lepo",
-        "rev": "9b3d3118cf5ec2406bb7f72565df661ecb0e1bb2",
+        "rev": "90c4f72c93aaec3793fd8185cf7b6f529f60c353",
         "type": "github"
       },
       "original": {
