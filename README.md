@@ -57,40 +57,6 @@ macOS 에서는 다중 사용자용 밖에 지원하지 않아 부득이 Nix 설
 > https://nix.dev/manual/nix/2.24/installation/multi-user
 > 보안 관점에서 합리적이다.
 
-### Nix 기초 구성
-
-채널이 구성되어 있지 않다면 nix 명령어 실행시 관련된 경고가 뜰 수 있다.
-
-```bash
-nix-channel --list
-```
-
-위 명령을 입력했을 때 다음과 같은 출력이 나타나지 않는다면,
-
-> `nixpkgs https://nixos.org/channels/nixpkgs-unstable`
-
-다음과 같이 채널을 추가하자.
-
-```bash
-nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixpkgs
-nix-channel --update
-```
-
-flake 를 사용할 수 있도록 구성하자.
-
-```bash
-mkdir -p ~/.config/nix
-echo 'experimental-features = nix-command flakes' > ~/.config/nix/nix.conf
-```
-
-workaround: lepo (https://github.com/lepo-cli/lepo) 라는 직접 Nix 로 패키징한
-프로그램을 가져오고 있는데 이것을 빌드하기 위해서는 sandbox 해제가 필요하다.
-의존하는 도구인 Deno 가 Nix 에 아직 잘 통합되어 있지 않은 탓이다.
-
-```bash
-echo 'sandbox = relaxed' >> ~/.config/nix/nix.conf
-```
-
 ### Bootstrap
 
 home-manager 구성을 클론한다.
@@ -103,7 +69,10 @@ git clone https://github.com/hooreique/home.git ~/.config/home-manager
 home-manager 최초 구성을 위해 다음을 실행한다.
 
 ```bash
-nix run nixpkgs#home-manager -- switch
+# relaxed-sandbox 는 workaround 임 (짜치는 이유라 설명 생략)
+nix --relexed-sandbox \
+  --experimental-features 'nix-command flakes' \
+  run nixpkgs#home-manager -- switch
 ```
 
 잘 구성되었다면 이제부터는 home-manager 명령을 직접 사용할 수 있으니 다음과 같이 사용하자.

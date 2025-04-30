@@ -1,6 +1,14 @@
 { pkgs, currSys, ... }:
 
 {
+  nix = {
+    package = pkgs.nix;
+    settings = {
+      experimental-features = [ "nix-command" "flakes" ];
+      sandbox = "relaxed";
+    };
+  };
+
   home.username = "song";
   home.homeDirectory =
     if currSys == "aarch64-darwin" then "/Users/song" else "/home/song";
