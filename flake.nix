@@ -8,6 +8,11 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nide = {
+      url = "github:hooreique/nide";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-utils.follows = "flake-utils";
+    };
     lepo = {
       url = "github:lepo-cli/lepo";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -23,6 +28,7 @@
         pkgs = import inputs.nixpkgs {
           system = system;
           overlays = [
+            (final: prev: { nide = inputs.nide.packages.${system}.default; })
             (final: prev: { lepo = inputs.lepo.packages.${system}.default; })
           ];
         };

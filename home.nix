@@ -15,6 +15,7 @@
   home.stateVersion = "24.11";
 
   home.packages = [
+    pkgs.nide
     pkgs.lepo
 
     pkgs.less
@@ -113,12 +114,6 @@
       la = "eza --almost-all --long --icons=auto --time-style=iso";
       ls = "ls --color=auto";
       lg = "lazygit";
-      nd = ''
-        ${pkgs.nix}/bin/nix develop --command env SHELL=${pkgs.zsh}/bin/zsh ${pkgs.neovim}/bin/nvim'';
-      ns = ''
-        ${pkgs.nix}/bin/nix-shell --run "SHELL=${pkgs.zsh}/bin/zsh ${pkgs.neovim}/bin/nvim"'';
-      nz = ''
-        ${pkgs.nix}/bin/nix develop --command env SHELL=${pkgs.zsh}/bin/zsh RPS1=" devShell" ${pkgs.zsh}/bin/zsh'';
       sj = "zellij";
       sn = "zellij --session";
       sa = "zellij attach";
