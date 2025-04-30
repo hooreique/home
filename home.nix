@@ -25,6 +25,7 @@
     pkgs.uutils-coreutils-noprefix # cat, cp, mkdir ...
     pkgs.openssh
     pkgs.zellij
+    pkgs.eza
     pkgs.vim
     pkgs.neovim
     pkgs.curl
@@ -120,8 +121,6 @@
       sa = "zellij attach";
     };
   };
-
-  programs.eza.enable = true;
 
   programs.zoxide = {
     enable = true;
