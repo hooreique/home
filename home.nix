@@ -122,14 +122,23 @@
     };
   };
 
+  programs.fzf = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
   programs.zoxide = {
     enable = true;
     enableZshIntegration = true;
   };
 
-  programs.fzf = {
+  programs.bat = {
     enable = true;
-    enableZshIntegration = true;
+    config.theme = "Sonokai";
+    themes.Sonokai = {
+      src = ./.;
+      file = "Sonokai.tmTheme";
+    };
   };
 
   programs.git = {
