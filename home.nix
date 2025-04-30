@@ -109,6 +109,7 @@
     '';
     initExtra = builtins.readFile ./zshrc;
     shellAliases = {
+      nide = "nide env SHELL=${pkgs.zsh}/bin/zsh";
       grep = "grep --color=auto";
       l = "eza --almost-all --icons=auto";
       la = "eza --almost-all --long --icons=auto --time-style=iso";
