@@ -23,7 +23,7 @@ count_copied   = { fg = "#1f1f28", bg = "#9dd274" }  # green
 count_cut      = { fg = "#1f1f28", bg = "#ff6578" }  # red
 count_selected = { fg = "#1f1f28", bg = "#eacb64" }  # yellow
 
-border_symbol = "│"
+border_symbol = " "
 border_style  = { bg = "#2a2f38", fg = "#373c4b" }   # bg0 / bg2
 
 [mode]
