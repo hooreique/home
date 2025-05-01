@@ -141,6 +141,29 @@
     };
   };
 
+  programs.yazi = {
+    enable = true;
+    shellWrapperName = "yasi";
+    keymap.manager.prepend_keymap = [
+      { on = ["u"]; run = ["arrow -1" ]; } { on = ["f"]; run = ["arrow -3"  ]; }
+      { on = ["e"]; run = ["arrow 1"  ]; } { on = ["s"]; run = ["arrow 3"   ]; }
+      { on = ["U"]; run = ["arrow -9" ]; } { on = ["F"]; run = ["arrow -50%"]; }
+      { on = ["E"]; run = ["arrow 9"  ]; } { on = ["S"]; run = ["arrow 50%" ]; }
+      { on = ["n"]; run = ["leave"    ]; } { on = ["t"]; run = ["open"      ]; }
+      { on = ["i"]; run = ["enter"    ]; } { on = ["r"]; run = ["cd ~"      ]; }
+      { on = ["h"]; run = ["arrow top"]; } { on = ["y"]; run = ["back"      ]; }
+      { on = ["o"]; run = ["arrow bot"]; } { on = ["Y"]; run = ["forward"   ]; }
+    ];
+    flavors.monokai-vibrant = pkgs.fetchFromGitHub {
+      owner = "sanjinso";
+      repo = "monokai-vibrant.yazi";
+      rev = "8b68223a8eaf014a8aac842852cc07461f07df58";
+      sha256 = "sha256-f3IaeDJ4gZf5glk4RIVQ1/DqH0ON2Sv5UzGvdAnLEbw=";
+    };
+    theme.flavor.dark = "monokai-vibrant";
+    theme.flavor.light = "monokai-vibrant";
+  };
+
   programs.git = {
     enable = true;
     userName = "Song Jeyeong";
