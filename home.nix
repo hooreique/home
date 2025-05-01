@@ -155,8 +155,8 @@
       { on = "E" ; run = "arrow 9"   ; } { on = "S" ; run = "arrow 50%"  ; }
       { on = "n" ; run = "leave"     ; } { on = "t" ; run = "open"       ; }
       { on = "i" ; run = "enter"     ; } { on = "r" ; run = "cd ~"       ; }
-      { on = "h" ; run = "arrow top" ; } { on = "y" ; run = "back"       ; }
-      { on = "o" ; run = "arrow bot" ; } { on = "Y" ; run = "forward"    ; }
+      { on = "h" ; run = "arrow top" ; } { on = "y" ; run = "seek 3"     ; }
+      { on = "o" ; run = "arrow bot" ; } { on = "l" ; run = "seek -3"    ; }
     ];
     flavors.sonokai    = ./sonokai;
     theme.flavor.dark  =  "sonokai";
