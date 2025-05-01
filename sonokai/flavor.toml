@@ -1,0 +1,94 @@
+# Core accent palette (Sonokai)
+#ff6578   # red
+#f69c5e   # orange
+#eacb64   # yellow
+#9dd274   # green
+#72cce8   # blue
+#ba9cf3   # purple
+#7ad5f1   # cyan / bright-blue
+
+[manager]
+cwd = { fg = "white" }
+
+hovered         = { reversed = true }
+preview_hovered = { reversed = true }
+
+tab_active   = { reversed = true }
+tab_inactive = {}
+tab_width    = 1
+
+# default bg
+count_copied   = { fg = "#1f1f28", bg = "#9dd274" }  # green
+count_cut      = { fg = "#1f1f28", bg = "#ff6578" }  # red
+count_selected = { fg = "#1f1f28", bg = "#eacb64" }  # yellow
+
+# Find
+find_keyword  = { bg = "white", fg = "#ff6578", bold = true, italic = false, underline = false }
+
+# Border
+border_symbol = "│"
+border_style  = { bg = "#2a2f38", fg = "#373c4b" }   # bg0 / bg2
+
+[which]
+cols = 2
+separator = " | "
+separator_style = { fg = "#2a2f38" }    # bg0
+mask = { bg = "#181a1c" }               # black
+rest = { fg = "#828a9a" }               # grey
+cand = { fg = "white" }
+desc = { fg = "#5a6477" }               # grey_dim
+
+[status]
+separator_open  = ""
+separator_close = ""
+separator_style = { fg = "reset", bg = "#333846" }    # bg1
+
+# default bg
+mode_normal = { fg = "#1f1f28", bg = "white",   bold = true }
+mode_select = { fg = "#1f1f28", bg = "#ff6578", bold = true }
+mode_unset  = { fg = "#1f1f28", bg = "#eacb64", bold = true }
+
+progress_label  = { fg = "#72cce8", bg = "#333846", bold = true }  # blue
+progress_normal = { fg = "#333846", bg = "#1f1f28" }
+progress_error  = { fg = "#333846", bg = "#1f1f28" }
+
+permissions_t = { fg = "#9dd274" }
+permissions_r = { fg = "#eacb64" }
+permissions_w = { fg = "#ff6578" }
+permissions_x = { fg = "#f69c5e" }
+permissions_s = { fg = "#72cce8" }
+
+[input]
+border   = { fg = "#72cce8" }           # blue
+title    = {}
+value    = {}
+selected = { reversed = true }
+
+[completion]
+border   = { fg = "#72cce8" }           # blue
+active   = { reversed = true }
+inactive = {}
+
+[tasks]
+border  = { fg = "#72cce8" }            # blue
+title   = {}
+hovered = { fg = "#ba9cf3" }            # purple
+
+[help]
+on      = { fg = "#72cce8" }            # blue
+run     = { fg = "#ba9cf3" }            # purple
+desc    = {}
+hovered = { reversed = true, bold = true }
+footer  = { fg = "#181a1c", bg = "#e1e3e4" }  # black text on fg-white
+
+[filetype]
+rules = [
+    { mime = "image/*",                     fg = "#eacb64" },   # yellow
+    { mime = "{audio,video}/*",             fg = "#9dd274" },   # green
+    { mime = "application/{,g}zip",         fg = "#ff6578" },   # red
+    { mime = "application/x-{tar,bzip*,xz,rar,7z-compressed}", fg = "#ff6578" },
+    { mime = "application/{pdf,doc,rtf,vnd.*}", fg = "#72cce8" },
+    { name = "*", is = "orphan",            fg = "#ff6578" },
+    { name = "*", is = "exec",              fg = "#9dd274" },
+    { name = "*/",                          fg = "#7ad5f1" }    # cyan-ish
+]

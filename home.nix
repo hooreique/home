@@ -134,10 +134,10 @@
 
   programs.bat = {
     enable = true;
-    config.theme = "Sonokai";
-    themes.Sonokai = {
-      src = ./.;
-      file = "Sonokai.tmTheme";
+    config.theme = "sonokai";
+    themes.sonokai = {
+      src = ./sonokai;
+      file = "tmtheme.xml";
     };
   };
 
@@ -154,14 +154,9 @@
       { on = ["h"]; run = ["arrow top"]; } { on = ["y"]; run = ["back"      ]; }
       { on = ["o"]; run = ["arrow bot"]; } { on = ["Y"]; run = ["forward"   ]; }
     ];
-    flavors.monokai-vibrant = pkgs.fetchFromGitHub {
-      owner = "sanjinso";
-      repo = "monokai-vibrant.yazi";
-      rev = "8b68223a8eaf014a8aac842852cc07461f07df58";
-      sha256 = "sha256-f3IaeDJ4gZf5glk4RIVQ1/DqH0ON2Sv5UzGvdAnLEbw=";
-    };
-    theme.flavor.dark = "monokai-vibrant";
-    theme.flavor.light = "monokai-vibrant";
+    flavors.sonokai    = ./sonokai;
+    theme.flavor.dark  =  "sonokai";
+    theme.flavor.light =  "sonokai";
   };
 
   programs.git = {
