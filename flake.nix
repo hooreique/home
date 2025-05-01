@@ -22,19 +22,17 @@
 
   outputs = inputs: inputs.flake-utils.lib.eachSystem [
     "x86_64-linux" "aarch64-darwin"
-  ] (system: {
+  ] (system: let username = "song"; in {
     packages.homeConfigurations = {
-      song = inputs.home-manager.lib.homeManagerConfiguration {
+      ${username} = inputs.home-manager.lib.homeManagerConfiguration {
         pkgs = import inputs.nixpkgs {
-          system = system;
+          inherit system;
           overlays = [
             (final: prev: { nide = inputs.nide.packages.${system}.default; })
             (final: prev: { lepo = inputs.lepo.packages.${system}.default; })
           ];
         };
-        extraSpecialArgs = {
-          currSys = system;
-        };
+        extraSpecialArgs = { inherit system; inherit username; };
         modules = [ ./home.nix ];
       };
     };

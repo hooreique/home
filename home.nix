@@ -1,58 +1,45 @@
-{ pkgs, currSys, ... }:
+{ pkgs, system, username, ... }:
 
 {
   nix = {
     package = pkgs.nix;
     settings = {
-      experimental-features = [ "nix-command" "flakes" ];
-      sandbox = "relaxed";
+      experimental-features = [ "nix-command" "flakes" ]; sandbox = "relaxed";
     };
   };
 
-  home.username = "song";
-  home.homeDirectory =
-    if currSys == "aarch64-darwin" then "/Users/song" else "/home/song";
+  home.username = username;
+  home.homeDirectory = if system == "aarch64-darwin"
+    then "/Users/${username}" else "/home/${username}";
   home.stateVersion = "24.11";
 
-  home.packages = [
-    pkgs.nide
-    pkgs.lepo
+  home.packages = with pkgs; [
+    # Dogfooding
+    nide  lepo
 
-    pkgs.less
-    pkgs.perl
-    pkgs.jq
-    pkgs.ncurses # clear, infocmp, tic
-    pkgs.uutils-coreutils-noprefix # cat, cp, mkdir ...
-    pkgs.openssh
-    pkgs.zellij
-    pkgs.eza
-    pkgs.vim
-    pkgs.neovim
-    pkgs.curl
-    pkgs.elinks
+    less  perl  jq  curl
+    ncurses # clear, infocmp, tic
+    uutils-coreutils-noprefix # cat, cp, mkdir ...
+    openssh  zellij  eza  elinks
+    vim  neovim
 
     # nix language server
-    pkgs.nil
+    nil
 
     # for neovim
-    pkgs.gcc
-    pkgs.ripgrep
-    pkgs.lua-language-server
+    gcc  ripgrep  lua-language-server
 
     # for nvim-treesitter
-    pkgs.tree-sitter
-    pkgs.nodejs_22
+    tree-sitter  nodejs_22
 
     # for telescope
-    pkgs.gnumake
-    pkgs.fd
+    gnumake  fd
 
     # for mason.nvim (<- nvim-java)
-    pkgs.wget
-    pkgs.unzip
+    wget  unzip
 
-    pkgs.vscode-langservers-extracted # vscode-json-language-server
-    pkgs.vscode-js-debug # js-debug
+    vscode-langservers-extracted # vscode-json-language-server
+    vscode-js-debug # js-debug
   ];
 
   home.file.".hushlogin".text = "";
@@ -83,9 +70,7 @@
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     oh-my-zsh = {
-      enable = true;
-      theme = "hoobira";
-      custom = "$HOME/omz-custom";
+      enable = true; theme = "hoobira"; custom = "$HOME/omz-custom";
     };
     sessionVariables = {
       LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
@@ -122,32 +107,20 @@
     };
   };
 
-  programs.fzf = {
-    enable = true;
-    enableZshIntegration = true;
-  };
+  programs.fzf = { enable = true; enableZshIntegration = true; };
 
-  programs.zoxide = {
-    enable = true;
-    enableZshIntegration = true;
-  };
+  programs.zoxide = { enable = true; enableZshIntegration = true; };
 
   programs.bat = {
     enable = true;
     config.theme = "sonokai";
-    themes.sonokai = {
-      src = ./sonokai;
-      file = "tmtheme.xml";
-    };
+    themes.sonokai = { src = ./sonokai; file = "tmtheme.xml"; };
   };
 
   programs.yazi = {
     enable = true;
     shellWrapperName = "yasi";
-    settings.manager = {
-      show_hidden  = true;
-      show_symlink = true;
-    };
+    settings.manager = { show_hidden  = true; show_symlink = true; };
     keymap.manager.prepend_keymap = [
       { on = "u" ; run = "arrow -1"  ; } { on = "f" ; run = "arrow -3"   ; }
       { on = "e" ; run = "arrow 1"   ; } { on = "s" ; run = "arrow 3"    ; }
@@ -177,9 +150,7 @@
   programs.lazygit = {
     enable = true;
     settings.gui = {
-      scrollHeight = 3;
-      nerdFontsVersion = 3;
-      filterMode = "fuzzy";
+      scrollHeight = 3; nerdFontsVersion = 3; filterMode = "fuzzy";
     };
   };
 }
