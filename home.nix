@@ -144,15 +144,19 @@
   programs.yazi = {
     enable = true;
     shellWrapperName = "yasi";
+    settings.manager = {
+      show_hidden  = true;
+      show_symlink = true;
+    };
     keymap.manager.prepend_keymap = [
-      { on = ["u"]; run = ["arrow -1" ]; } { on = ["f"]; run = ["arrow -3"  ]; }
-      { on = ["e"]; run = ["arrow 1"  ]; } { on = ["s"]; run = ["arrow 3"   ]; }
-      { on = ["U"]; run = ["arrow -9" ]; } { on = ["F"]; run = ["arrow -50%"]; }
-      { on = ["E"]; run = ["arrow 9"  ]; } { on = ["S"]; run = ["arrow 50%" ]; }
-      { on = ["n"]; run = ["leave"    ]; } { on = ["t"]; run = ["open"      ]; }
-      { on = ["i"]; run = ["enter"    ]; } { on = ["r"]; run = ["cd ~"      ]; }
-      { on = ["h"]; run = ["arrow top"]; } { on = ["y"]; run = ["back"      ]; }
-      { on = ["o"]; run = ["arrow bot"]; } { on = ["Y"]; run = ["forward"   ]; }
+      { on = "u" ; run = "arrow -1"  ; } { on = "f" ; run = "arrow -3"   ; }
+      { on = "e" ; run = "arrow 1"   ; } { on = "s" ; run = "arrow 3"    ; }
+      { on = "U" ; run = "arrow -9"  ; } { on = "F" ; run = "arrow -50%" ; }
+      { on = "E" ; run = "arrow 9"   ; } { on = "S" ; run = "arrow 50%"  ; }
+      { on = "n" ; run = "leave"     ; } { on = "t" ; run = "open"       ; }
+      { on = "i" ; run = "enter"     ; } { on = "r" ; run = "cd ~"       ; }
+      { on = "h" ; run = "arrow top" ; } { on = "y" ; run = "back"       ; }
+      { on = "o" ; run = "arrow bot" ; } { on = "Y" ; run = "forward"    ; }
     ];
     flavors.sonokai    = ./sonokai;
     theme.flavor.dark  =  "sonokai";

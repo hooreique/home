@@ -13,7 +13,6 @@ cwd = { fg = "white" }
 hovered         = { reversed = true }
 preview_hovered = { reversed = true }
 
-# find_keyword  = { bg = "white", fg = "#ff6578", bold = true, italic = false, underline = false }
 find_keyword  = { bg = "white", fg = "#ff6578", bold = true }
 
 tab_active   = { reversed = true }
@@ -28,21 +27,25 @@ border_symbol = "│"
 border_style  = { bg = "#2a2f38", fg = "#373c4b" }   # bg0 / bg2
 
 [mode]
-normal_main = { fg = "#1f1f28", bg = "white",   bold = true }
-select_main = { fg = "#1f1f28", bg = "#ff6578", bold = true }
-unset_main  = { fg = "#1f1f28", bg = "#eacb64", bold = true }
+normal_main = { fg = "#333846", bg = "#a5e179", bold = true }
+select_main = { fg = "#333846", bg = "#ff6d7e", bold = true }
+unset_main  = { fg = "#333846", bg = "#eacb64", bold = true }
+
+normal_alt  = { fg = "#9dd274", bg = "#394634" }
+select_alt  = { fg = "#ff6578", bg = "#55393d" }
+unset_alt   = { fg = "#eacb64", bg = "#4e432f" }
 
 [status]
-overall = { fg = "reset", bg = "#333846" }  # bg1
+overall = { fg = "reset", bg = "#2a2f38" }
 
 sep_left  = { open = "", close = "" }
 sep_right = { open = "", close = "" }
 
-perm_type  = { fg = "#9dd274" }
+perm_type  = { fg = "#f69c5e" }
 perm_read  = { fg = "#eacb64" }
 perm_write = { fg = "#ff6578" }
-perm_exec  = { fg = "#f69c5e" }
-perm_sep   = { fg = "#72cce8" }
+perm_exec  = { fg = "#9dd274" }
+perm_sep   = { fg = "#828a9a" }
 
 progress_label  = { fg = "#72cce8", bg = "#333846", bold = true }  # blue
 progress_normal = { fg = "#333846", bg = "#1f1f28" }
