@@ -1,5 +1,28 @@
 {
   "nodes": {
+    "fall": {
+      "inputs": {
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1746239121,
+        "narHash": "sha256-GxVxFQLN2NDA3SeJLOL21YlSA0ja2ruH3xxWfvRdlM4=",
+        "owner": "hooreique",
+        "repo": "fall",
+        "rev": "b93c4aac48551ed860a3620d6e736092ac48264e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hooreique",
+        "repo": "fall",
+        "type": "github"
+      }
+    },
     "flake-utils": {
       "inputs": {
         "systems": "systems"
@@ -102,6 +125,7 @@
     },
     "root": {
       "inputs": {
+        "fall": "fall",
         "flake-utils": "flake-utils",
         "home-manager": "home-manager",
         "lepo": "lepo",

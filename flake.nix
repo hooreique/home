@@ -8,6 +8,11 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    fall = {
+      url = "github:hooreique/fall";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-utils.follows = "flake-utils";
+    };
     nide = {
       url = "github:hooreique/nide";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -28,6 +33,7 @@
         pkgs = import inputs.nixpkgs {
           inherit system;
           overlays = [
+            (final: prev: { fall = inputs.fall.packages.${system}.default; })
             (final: prev: { nide = inputs.nide.packages.${system}.default; })
             (final: prev: { lepo = inputs.lepo.packages.${system}.default; })
           ];

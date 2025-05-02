@@ -15,7 +15,7 @@
 
   home.packages = with pkgs; [
     # Dogfooding
-    nide  lepo
+    fall  nide  lepo
 
     less  perl  jq  curl
     ncurses # clear, infocmp, tic
