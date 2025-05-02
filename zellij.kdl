@@ -27,6 +27,8 @@ keybinds clear-defaults=true {
 
     bind "Alt a" { SwitchToMode "resize"; }
 
+    bind "Alt k" { Clear; }
+
     bind "Alt o" {
       LaunchOrFocusPlugin "session-manager" {
         floating true
