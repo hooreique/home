@@ -94,11 +94,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1746022088,
-        "narHash": "sha256-CLFrdFP106f9q1xW9AYOKob2c5SmwOlU+J/C/f3LvEo=",
+        "lastModified": 1746239695,
+        "narHash": "sha256-eryqzcUZmdYz47b/XJQWChNj4P0/lLncKoSPKSFKKfU=",
         "owner": "hooreique",
         "repo": "nide",
-        "rev": "9a9d10df7c070b596bd86c5ded3fb580764e705d",
+        "rev": "b9247d1213de77c683b7ef833e865250aaa3683a",
         "type": "github"
       },
       "original": {
