@@ -27,6 +27,15 @@ nman() {
   fi
 }
 
+diffless() {
+  if [[ $# -ne 2 ]]; then
+    echo "Usage: diffless <file1> <file2>" >&2
+    return 1
+  fi
+
+  diff --color=always --unified "$1" "$2" | less --RAW-CONTROL-CHARS
+}
+
 # Run extra rc
 if [[ -f ~/init.zsh ]]; then
   source ~/init.zsh
