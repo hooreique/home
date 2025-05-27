@@ -97,10 +97,10 @@
     shellAliases = {
       nide = "nide env SHELL=${pkgs.zsh}/bin/zsh";
       grep = "grep --color=auto";
-      l = "eza --almost-all --icons=auto";
-      lo = "eza --almost-all --icons=auto --oneline";
-      la = "eza --almost-all --long --icons=auto --time-style=iso";
       ls = "ls --color=auto";
+      l = "eza --almost-all --icons=auto --oneline";
+      la = "eza --almost-all --long --icons=auto --time-style=iso";
+      lc = "eza --almost-all --icons=auto";
       lg = "lazygit";
       sj = "zellij";
       sn = "zellij --session";
