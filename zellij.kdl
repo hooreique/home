@@ -11,12 +11,12 @@ themes {
     black   "#333846"
     blue    "#72cce8"
     cyan    "#7ad5f1"
-    fg      "#e1e3e4"
+    fg      "#5a6477"
     green   "#a5e179"
     magenta "#ba9cf3"
     orange  "#f69c5e"
     red     "#ff6d7e"
-    white   "#e1e3e4"
+    white   "#828a9a"
     yellow  "#eacb64"
   }
 }
