@@ -84,29 +84,6 @@
         "type": "github"
       }
     },
-    "nide": {
-      "inputs": {
-        "flake-utils": [
-          "flake-utils"
-        ],
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1746239695,
-        "narHash": "sha256-eryqzcUZmdYz47b/XJQWChNj4P0/lLncKoSPKSFKKfU=",
-        "owner": "hooreique",
-        "repo": "nide",
-        "rev": "b9247d1213de77c683b7ef833e865250aaa3683a",
-        "type": "github"
-      },
-      "original": {
-        "owner": "hooreique",
-        "repo": "nide",
-        "type": "github"
-      }
-    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1742069588,
@@ -129,7 +106,6 @@
         "flake-utils": "flake-utils",
         "home-manager": "home-manager",
         "lepo": "lepo",
-        "nide": "nide",
         "nixpkgs": "nixpkgs"
       }
     },

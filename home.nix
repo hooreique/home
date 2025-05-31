@@ -15,7 +15,7 @@
 
   home.packages = with pkgs; [
     # Dogfooding
-    fall  nide  lepo
+    fall  lepo
 
     less  perl  jq  curl
     ncurses # clear, infocmp, tic
@@ -95,7 +95,7 @@
     '';
     initExtra = builtins.readFile ./zshrc;
     shellAliases = {
-      nide = "nide env SHELL=${pkgs.zsh}/bin/zsh";
+      nenv = ''nix develop --command env SHELL="${pkgs.zsh}/bin/zsh"'';
       grep = "grep --color=auto";
       ls = "ls --color=auto";
       l = "eza --almost-all --icons=auto --oneline";
