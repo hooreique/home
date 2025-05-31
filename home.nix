@@ -93,7 +93,7 @@
         ${pkgs.openssh}/bin/ssh-keygen -t ed25519 -f ~/.ssh/host_ed25519 -N ""
       fi
     '';
-    initExtra = builtins.readFile ./zshrc;
+    initContent = builtins.readFile ./zshrc;
     shellAliases = {
       nenv = ''nix develop --command env SHELL="${pkgs.zsh}/bin/zsh"'';
       grep = "grep --color=auto";
