@@ -35,9 +35,6 @@
     # for telescope
     gnumake  fd
 
-    # for mason.nvim (<- nvim-java)
-    #wget  unzip
-
     vscode-langservers-extracted # vscode-json-language-server
     vscode-js-debug # js-debug
   ];
