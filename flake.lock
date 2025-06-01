@@ -10,11 +10,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1748605370,
-        "narHash": "sha256-xco7gFDLQlr9QU+/NyTaT7fxfdNMUAiug7/MUb8P+cs=",
+        "lastModified": 1748756827,
+        "narHash": "sha256-+DHFs0RbrWINc/SKUh+KvhTkEeryXuMqYf7wAyJ1sGk=",
         "owner": "hooreique",
         "repo": "fall",
-        "rev": "51029d02e291bc1fd048340121c7b97a4c672ad4",
+        "rev": "964f51f6089cc34f301e7863ae4d1933a3264b62",
         "type": "github"
       },
       "original": {
@@ -71,11 +71,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1745974570,
-        "narHash": "sha256-UF7C/SIcwimgvsdIbYjshfJ71rSmmFVVd8GjyQXkJcc=",
+        "lastModified": 1748756739,
+        "narHash": "sha256-0H+JJeqi+sLmNEueH5QbNhivS2/Cj03DvYuYHGOBtLQ=",
         "owner": "lepo-cli",
         "repo": "lepo",
-        "rev": "e438b7cd5896466742ad82eb4b4765b3bfd6080b",
+        "rev": "be7b77aa056f5986c7aa826818f1eb650972e490",
         "type": "github"
       },
       "original": {
