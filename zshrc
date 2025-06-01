@@ -1,3 +1,4 @@
+unalias ls  2> /dev/null
 unalias ll  2> /dev/null
 unalias lsa 2> /dev/null
 
