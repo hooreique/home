@@ -123,8 +123,8 @@
   programs.yazi = {
     enable = true;
     shellWrapperName = "yasi";
-    settings.manager = { show_hidden  = true; show_symlink = true; };
-    keymap.manager.prepend_keymap = [
+    settings.mgr = { show_hidden  = true; show_symlink = true; };
+    keymap.mgr.prepend_keymap = [
       { on = "u" ; run = "arrow -1"  ; }  { on = "f" ; run = "arrow -3"   ; }
       { on = "e" ; run = "arrow 1"   ; }  { on = "s" ; run = "arrow 3"    ; }
       { on = "U" ; run = "arrow -9"  ; }  { on = "F" ; run = "arrow -50%" ; }

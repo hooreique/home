@@ -7,7 +7,7 @@
 #ba9cf3   # purple
 #7ad5f1   # cyan / bright-blue
 
-[manager]
+[mgr]
 cwd = { fg = "white" }
 
 hovered         = { reversed = true }
