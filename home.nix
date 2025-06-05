@@ -43,7 +43,7 @@
 
   home.file."omz-custom/themes/hoobira.zsh-theme".source = ./hoobira.zsh-theme;
 
-  xdg.configFile."zellij/config.kdl".source = ./zellij.{
+  xdg.configFile."zellij/config.kdl".source = ./zellij.${
     if system == "aarch64-darwin" then "mac" else "win"
   }.kdl;
   xdg.configFile."zellij/layouts/compact.kdl".text = ''
