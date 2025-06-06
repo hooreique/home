@@ -10,11 +10,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1748756827,
-        "narHash": "sha256-+DHFs0RbrWINc/SKUh+KvhTkEeryXuMqYf7wAyJ1sGk=",
+        "lastModified": 1749177393,
+        "narHash": "sha256-QmxGUzRbkUEQWfzXR7WJCn4n1OcrRYqSzuE9mP9FycU=",
         "owner": "hooreique",
         "repo": "fall",
-        "rev": "964f51f6089cc34f301e7863ae4d1933a3264b62",
+        "rev": "4aa35f4997a46b551a68e928c9c94c75667351ac",
         "type": "github"
       },
       "original": {
