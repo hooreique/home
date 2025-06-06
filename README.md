@@ -57,6 +57,62 @@ macOS 에서는 다중 사용자용 밖에 지원하지 않아 부득이 Nix 설
 > https://nix.dev/manual/nix/2.24/installation/multi-user
 > 보안 관점에서 합리적이다.
 
+#### Nix Channel
+
+<details><summary>채널 구성에 참고할 만한 명령어</summary>
+
+```bash
+nix-channel --list
+```
+
+```bash
+nix-channel --add https://nixos.org/channels/nixos-unstable nixpkgs
+```
+
+```bash
+nix-channel --remove nixpkgs
+```
+
+```bash
+nix-channel --update
+```
+</details>
+
+#### Multi User Config
+
+<details><summary>Multi User (Nix Daemon) 구성에 참고</summary>
+
+```
+# /etc/nix/nix.conf
+
+# sandbox = relaxed 를 사용하기 위해
+trusted-users = song
+
+# 커스텀 CA 인증서를 사용하기 위해
+ssl-cert-file = /path/to/cert.pem
+```
+
+```xml
+<!-- SOCKS5 프록시를 사용하기 위해 -->
+<plist>
+  <dict>
+    ...
+    <key>EnvironmentVariables</key>
+    <dict>
+      <key>ALL_PROXY</key>
+      <string>socks5h://myproxy</string>
+    </dict>
+  </dict>
+</plist>
+```
+
+```bash
+# 적용하려면
+sudo launchctl unload /Library/LaunchDaemons/org.nixos.nix-daemon.plist
+sudo launchctl   load /Library/LaunchDaemons/org.nixos.nix-daemon.plist
+```
+</details>
+
 ### Bootstrap
 
 home-manager 구성을 클론한다.
@@ -70,9 +126,11 @@ home-manager 최초 구성을 위해 다음을 실행한다.
 
 ```bash
 # relaxed-sandbox 는 workaround 임 (짜치는 이유라 설명 생략)
-nix --relexed-sandbox \
+nix --relaxed-sandbox \
   --experimental-features 'nix-command flakes' \
-  run nixpkgs#home-manager -- switch
+  run nixpkgs#home-manager -- \
+  --extra-experimental-features 'nix-command flakes' \
+  switch
 ```
 
 잘 구성되었다면 이제부터는 home-manager 명령을 직접 사용할 수 있으니 다음과 같이 사용하자.
