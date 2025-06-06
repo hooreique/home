@@ -98,6 +98,7 @@
       denv = ''nix develop --command env SHELL="${pkgs.zsh}/bin/zsh"'';
       gat = "GIT_PAGER=cat git";
       grep = "grep --color=auto";
+      ls = "TERM=xterm ls --color=auto";
       l = "eza --almost-all --icons=auto --oneline";
       la = "eza --almost-all --long --icons=auto --time-style=iso";
       lc = "eza --almost-all --icons=auto";
