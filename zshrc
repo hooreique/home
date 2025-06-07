@@ -34,7 +34,7 @@ diffless() {
     return 1
   fi
 
-  diff --color=always --unified "$1" "$2" | less --RAW-CONTROL-CHARS
+  diff --color=always --unified "$1" "$2" | less
 }
 
 # Run extra rc
