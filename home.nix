@@ -17,10 +17,10 @@
     # Dogfooding
     fall  lepo
 
-    bash  less  perl  jq  curl  gnused
+    bash  openssh  lsof  less  gnused  perl  jq  curl  elinks
     ncurses # clear, infocmp, tic
     uutils-coreutils-noprefix # cat, cp, mkdir ...
-    openssh  zellij  eza  elinks
+    zellij  eza
     vim  neovim
 
     # nix language server
