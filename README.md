@@ -126,9 +126,9 @@ home-manager 최초 구성을 위해 다음을 실행한다.
 
 ```bash
 # relaxed-sandbox 는 workaround 임 (짜치는 이유라 설명 생략)
-nix --relaxed-sandbox \
-  --experimental-features 'nix-command flakes' \
-  run nixpkgs#home-manager -- \
+NIX_CONFIG="sandbox = relaxed
+experimental-features = nix-command flakes" \
+  nix run nixpkgs#home-manager -- \
   --extra-experimental-features 'nix-command flakes' \
   switch
 ```
