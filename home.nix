@@ -37,6 +37,7 @@
 
     vscode-langservers-extracted # vscode-json-language-server
     vscode-js-debug # js-debug
+    yaml-language-server
   ];
 
   home.file.".hushlogin".text = "";
