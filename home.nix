@@ -17,7 +17,7 @@
     # Dogfooding
     fall  lepo
 
-    bash  openssh  lsof  less  gnused  perl  jq  curl  elinks
+    bash  openssh  lsof  less  gnused  perl  jq  curl  elinks  entr
     ncurses # clear, infocmp, tic
     uutils-coreutils-noprefix # cat, cp, mkdir ...
     zellij  eza
