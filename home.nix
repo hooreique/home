@@ -40,6 +40,16 @@
     yaml-language-server
   ];
 
+  home.sessionVariables = {
+    LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
+    SHELL = "${pkgs.zsh}/bin/zsh";
+    EDITOR = "${pkgs.neovim}/bin/nvim";
+    VISUAL = "${pkgs.neovim}/bin/nvim";
+    NVIM_APPNAME = "hoovim";
+    LANG = "en_US.UTF-8";
+    LC_CTYPE = "en_US.UTF-8";
+  };
+
   home.file.".hushlogin".text = "";
 
   home.file."omz-custom/themes/hoobira.zsh-theme".source = ./hoobira.zsh-theme;
@@ -71,15 +81,6 @@
     syntaxHighlighting.enable = true;
     oh-my-zsh = {
       enable = true; theme = "hoobira"; custom = "$HOME/omz-custom";
-    };
-    sessionVariables = {
-      LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
-      SHELL = "${pkgs.zsh}/bin/zsh";
-      EDITOR = "${pkgs.neovim}/bin/nvim";
-      VISUAL = "${pkgs.neovim}/bin/nvim";
-      NVIM_APPNAME = "hoovim";
-      LANG = "en_US.UTF-8";
-      LC_CTYPE = "en_US.UTF-8";
     };
     envExtra = ''
       # Nix (Single user env prefered)
