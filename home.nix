@@ -17,7 +17,8 @@
     # Dogfooding
     fall  lepo
 
-    bash  openssh  lsof  less  gnused  perl  jq  curl  elinks  entr
+    bash  lsof  less  gnused  perl  jq  entr
+    openssh  openssl  curl  elinks
     dig                       # nslookup
     inetutils                 # telnet
     ncurses                   # clear, infocmp, tic
