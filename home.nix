@@ -23,6 +23,7 @@
     inetutils                 # telnet
     ncurses                   # clear, infocmp, tic
     uutils-coreutils-noprefix # cat, cp, mkdir ...
+    uutils-findutils          # find
     zellij  eza
     vim  neovim
 
