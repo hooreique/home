@@ -21,7 +21,7 @@
   };
 
   outputs = inputs: inputs.flake-utils.lib.eachSystem [
-    "x86_64-linux" "aarch64-darwin"
+    "x86_64-linux"  "aarch64-darwin"  "aarch64-linux"
   ] (system: let username = "song"; in {
     packages.homeConfigurations = {
       ${username} = inputs.home-manager.lib.homeManagerConfiguration {
