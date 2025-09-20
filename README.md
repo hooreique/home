@@ -115,6 +115,16 @@ sudo launchctl   load /Library/LaunchDaemons/org.nixos.nix-daemon.plist
 
 ### Bootstrap
 
+`nix` 에 접근이 가능하도록 `source` 한다.
+
+```bash
+# Single User
+source ~/.nix-profile/etc/profile.d/nix.sh
+
+# Multi User
+source /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
+```
+
 home-manager 구성을 클론한다.
 
 ```bash
