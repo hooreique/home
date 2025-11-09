@@ -74,9 +74,12 @@
 
   programs.ssh = {
     enable = true;
-    serverAliveInterval = 60;
-    serverAliveCountMax = 3;
-    matchBlocks."*".identityFile = "~/.ssh/id_ed25519";
+    enableDefaultConfig = false;
+    matchBlocks."*" = {
+      identityFile = "~/.ssh/id_ed25519";
+      serverAliveInterval = 60;
+      serverAliveCountMax = 3;
+    };
   };
 
   programs.zsh = {
@@ -148,12 +151,12 @@
 
   programs.git = {
     enable = true;
-    userName = "Song Jeyeong";
-    userEmail = "46372718+hooreique@users.noreply.github.com";
-    extraConfig = {
+    settings = {
+      user.name       = "Song Jeyeong";
+      user.email      = "46372718+hooreique@users.noreply.github.com";
       user.signingKey = "~/.ssh/id_ed25519";
-      gpg.format = "ssh";
-      commit.gpgSign = true;
+      gpg.format      = "ssh";
+      commit.gpgSign  = true;
     };
   };
 
