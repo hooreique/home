@@ -34,7 +34,7 @@
     gcc  ripgrep  lua-language-server
 
     # for nvim-treesitter
-    tree-sitter  nodejs_22
+    tree-sitter  nodejs_24
 
     # for telescope
     gnumake  fd
