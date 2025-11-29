@@ -13,11 +13,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
     };
-    lepo = {
-      url = "github:lepo-cli/lepo";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-utils.follows = "flake-utils";
-    };
   };
 
   outputs = inputs: inputs.flake-utils.lib.eachSystem [
@@ -29,7 +24,6 @@
           inherit system;
           overlays = [
             (final: prev: { fall = inputs.fall.packages.${system}.default; })
-            (final: prev: { lepo = inputs.lepo.packages.${system}.default; })
           ];
         };
         extraSpecialArgs = { inherit system; inherit username; };

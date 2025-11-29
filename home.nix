@@ -15,7 +15,7 @@
 
   home.packages = with pkgs; [
     # Dogfooding
-    fall  lepo
+    fall
 
     bash  lsof  less  gnused  perl  jq  entr
     openssh  openssl  curl  elinks
