@@ -132,6 +132,17 @@ mkdir -p ~/.config/home-manager
 git clone https://github.com/hooreique/home.git ~/.config/home-manager
 ```
 
+<details><summary>세팅 끝나고 origin url 고치기</summary>
+
+Git 통신으로 SSH 를 쓰는 세팅이므로 Bootstrap 이후 반영 필요
+
+```bash
+cd ~/.config/home-manager
+git remote set-url origin git@github.com:hooreique/home.git
+```
+
+</details>
+
 home-manager 최초 구성을 위해 다음을 실행한다.
 
 ```bash
