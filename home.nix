@@ -21,6 +21,7 @@
     openssh  openssl  curl  elinks
     dig                       # nslookup
     inetutils                 # telnet
+    diffutils                 # cmp
     ncurses                   # clear, infocmp, tic
     uutils-coreutils-noprefix # cat, cp, mkdir ...
     uutils-findutils          # find
