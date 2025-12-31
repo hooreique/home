@@ -102,6 +102,10 @@
       if [[ ! -f ~/.ssh/host_ed25519 ]]; then
         ${pkgs.openssh}/bin/ssh-keygen -t ed25519 -f ~/.ssh/host_ed25519 -N ""
       fi
+
+      # zcompdump file
+      export XDG_CACHE_HOME="''${XDG_CACHE_HOME:-$HOME/.cache}"
+      export ZSH_COMPDUMP="$XDG_CACHE_HOME/zcompdump"
     '';
     initContent = builtins.readFile ./zshrc;
     shellAliases = {
