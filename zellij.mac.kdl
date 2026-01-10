@@ -69,3 +69,34 @@ keybinds clear-defaults=true {
     bind "i" { Resize "Increase Right"; }
   }
 }
+
+web_client {
+  theme {
+    foreground 225 227 228
+    background 42 47 56
+
+    cursor 225 227 228
+    cursor_accent 42 47 56
+
+    selection_background 61 68 85
+    // selection_foreground <optional>
+
+    black 42 47 56
+    red 255 101 120
+    green 157 210 116
+    yellow 234 203 100
+    blue 246 156 94
+    magenta 186 156 243
+    cyan 114 204 232
+    white 225 227 228
+
+    bright_black 130 138 154
+    bright_red 255 101 120
+    bright_green 157 210 116
+    bright_yellow 234 203 100
+    bright_blue 246 156 94
+    bright_magenta 186 156 243
+    bright_cyan 114 204 232
+    bright_white 225 227 228
+  }
+}
