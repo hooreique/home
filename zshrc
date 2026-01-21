@@ -37,6 +37,10 @@ diffless() {
   diff --color=always --unified "$1" "$2" | less
 }
 
+c() {
+  printf '\033]52;c;%s\007' "$(base64 | tr --delete '\n')"
+}
+
 # Run extra rc
 if [[ -f ~/init.zsh ]]; then
   source ~/init.zsh

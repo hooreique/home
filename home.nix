@@ -121,6 +121,7 @@
       sj = "zellij";
       sn = "zellij --session";
       sa = "zellij attach";
+      p = "pbpaste";
       putil = ''fzf <<< "${builtins.readFile ./posix-utils.txt}"'';
     };
   };
