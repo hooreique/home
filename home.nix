@@ -23,7 +23,8 @@
     inetutils                 # telnet
     diffutils                 # cmp
     ncurses                   # clear, infocmp, tic
-    uutils-coreutils-noprefix # cat, cp, mkdir ...
+    uutils-coreutils          # uutils-env
+    uutils-coreutils-noprefix # cat, cp, mkdir
     uutils-findutils          # find
     zellij  eza
     vim  neovim
@@ -109,10 +110,11 @@
     '';
     initContent = builtins.readFile ./zshrc;
     shellAliases = {
-      denv = ''nix develop --command env SHELL="${pkgs.zsh}/bin/zsh"'';
+      denv = ''nix develop --command -- "${pkgs.uutils-coreutils}/bin/uutils-env" SHELL="${pkgs.zsh}/bin/zsh"'';
+      uenv = ''NIXPKGS_ALLOW_UNFREE=1 nix develop --impure --command -- "${pkgs.uutils-coreutils}/bin/uutils-env" SHELL="${pkgs.zsh}/bin/zsh"'';
       gat = "GIT_PAGER=cat git";
-      grep = "grep --color=auto";
-      ls = "TERM=xterm ls --color=auto";
+      grep = "/usr/bin/grep --color=auto";
+      ls = ''"${pkgs.uutils-coreutils}/bin/uutils-ls" --color=auto'';
       l = "eza --almost-all --icons=auto --oneline";
       la = "eza --almost-all --long --icons=auto --time-style=iso";
       lc = "eza --almost-all --icons=auto";
@@ -121,7 +123,7 @@
       sj = "zellij";
       sn = "zellij --session";
       sa = "zellij attach";
-      p = "pbpaste";
+      p = "/usr/bin/pbpaste";
       putil = ''fzf <<< "${builtins.readFile ./posix-utils.txt}"'';
     };
   };
