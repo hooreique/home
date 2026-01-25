@@ -164,6 +164,7 @@
       user.email      = "46372718+hooreique@users.noreply.github.com";
       user.signingKey = "~/.ssh/id_ed25519";
       gpg.format      = "ssh";
+      gpg.ssh.program = "${pkgs.openssh}/bin/ssh-keygen";
       commit.gpgSign  = true;
     };
   };
