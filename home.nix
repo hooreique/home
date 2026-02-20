@@ -172,7 +172,8 @@
   programs.lazygit = {
     enable = true;
     settings.gui = {
-      scrollHeight = 3; nerdFontsVersion = 3; filterMode = "fuzzy";
+      scrollHeight = 3; nerdFontsVersion = "3"; filterMode = "fuzzy";
     };
+    settings.git.overrideGpg = true;
   };
 }
