@@ -119,7 +119,6 @@
       la = "eza --almost-all --long --icons=auto --time-style=iso";
       lc = "eza --almost-all --icons=auto";
       lt = ''eza --almost-all --long --icons=auto --time-style=iso --tree --level=2 --dereference --git --ignore-glob=".git|node_modules"'';
-      lg = "lazygit";
       sj = "zellij";
       sn = "zellij --session";
       sa = "zellij attach";
