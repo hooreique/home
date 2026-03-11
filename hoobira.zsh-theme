@@ -1,3 +1,19 @@
+# Override OMZ's origin-only remote check with upstream-aware check
+# See <omz data path>/lib/git.zsh
+function git_prompt_remote() {
+  local upstream
+  upstream=$(__git_prompt_git rev-parse --abbrev-ref --symbolic-full-name "@{upstream}" 2>/dev/null) || {
+    echo "$ZSH_THEME_GIT_PROMPT_REMOTE_MISSING"
+    return
+  }
+
+  if [[ -n "$upstream" ]]; then
+    echo "$ZSH_THEME_GIT_PROMPT_REMOTE_EXISTS"
+  else
+    echo "$ZSH_THEME_GIT_PROMPT_REMOTE_MISSING"
+  fi
+}
+
 # The name of this theme, _hoobira_, means the _hoo_ mod of _bira_.
 # This theme was inspired by _bira_, a built-in theme of _oh-my-zsh_.
 
