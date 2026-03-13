@@ -144,7 +144,6 @@
 
   programs.yazi = {
     enable = true;
-    shellWrapperName = "yasi";
     settings.mgr = { show_hidden  = true; show_symlink = true; };
     keymap.mgr.prepend_keymap = [
       { on = "u" ; run = "arrow -1"  ; }  { on = "f" ; run = "arrow -3"   ; }
