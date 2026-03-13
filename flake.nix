@@ -4,15 +4,8 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    fall = {
-      url = "github:hooreique/fall";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-utils.follows = "flake-utils";
-    };
+    home-manager.url = "github:nix-community/home-manager";
+    fall.url = "github:hooreique/fall";
   };
 
   outputs = inputs: inputs.flake-utils.lib.eachSystem [
