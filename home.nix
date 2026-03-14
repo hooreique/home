@@ -168,6 +168,7 @@
       gpg.format      = "ssh";
       gpg.ssh.program = "${pkgs.openssh}/bin/ssh-keygen";
       commit.gpgSign  = true;
+      rerere.enabled  = true;
     };
   };
 
