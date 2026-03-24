@@ -167,13 +167,15 @@
   programs.git = {
     enable = true;
     settings = {
-      user.name       = "Song Jeyeong";
-      user.email      = "46372718+hooreique@users.noreply.github.com";
-      user.signingKey = "~/.ssh/id_ed25519";
-      gpg.format      = "ssh";
-      gpg.ssh.program = "${pkgs.openssh}/bin/ssh-keygen";
-      commit.gpgSign  = true;
-      rerere.enabled  = true;
+      user.name           = "Song Jeyeong";
+      user.email          = "46372718+hooreique@users.noreply.github.com";
+      user.signingKey     = "~/.ssh/id_ed25519";
+      gpg.format          = "ssh";
+      gpg.ssh.program     = "${pkgs.openssh}/bin/ssh-keygen";
+      commit.gpgSign      = true;
+      rerere.enabled      = true;
+      diff.tool           = "neovim";
+      difftool.neovim.cmd = ''${pkgs.neovim}/bin/nvim -d "$LOCAL" "$REMOTE"'';
     };
   };
 
