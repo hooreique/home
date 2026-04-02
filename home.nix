@@ -36,6 +36,7 @@
     uutils-coreutils          # uutils-env
     uutils-coreutils-noprefix # cat, cp, mkdir
     uutils-findutils          # find
+    unixtools.watch
     zellij  eza
     vim  neovim
 
