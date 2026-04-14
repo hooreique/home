@@ -27,6 +27,7 @@
     # Dogfooding
     fall
 
+    nushell
     bash  lsof  less  gnused  perl  jq  entr
     openssh  openssl  curl  elinks
     dig                       # nslookup
