@@ -38,7 +38,7 @@
     uutils-coreutils-noprefix # cat, cp, mkdir
     uutils-findutils          # find
     unixtools.watch
-    zellij  eza
+    zellij  eza  difftastic
     vim  neovim
 
     # nix language server
@@ -124,6 +124,8 @@
       denv = ''nix develop --command -- "${pkgs.uutils-coreutils}/bin/uutils-env" SHELL="${pkgs.zsh}/bin/zsh"'';
       uenv = ''NIXPKGS_ALLOW_UNFREE=1 nix develop --impure --command -- "${pkgs.uutils-coreutils}/bin/uutils-env" SHELL="${pkgs.zsh}/bin/zsh"'';
       gat = "GIT_PAGER=cat git";
+      gafft = "GIT_PAGER=cat GIT_EXTERNAL_DIFF=${pkgs.difftastic}/bin/difft git diff";
+      gifft = "GIT_EXTERNAL_DIFF=${pkgs.difftastic}/bin/difft git diff";
       grep = "/usr/bin/grep --color=auto";
       ls = ''"${pkgs.uutils-coreutils}/bin/uutils-ls" --color=auto'';
       l = "eza --almost-all --icons=auto --oneline";
@@ -187,5 +189,6 @@
       scrollHeight = 3; nerdFontsVersion = "3"; filterMode = "fuzzy";
     };
     settings.git.overrideGpg = true;
+    settings.git.pagers = [{ externalDiffCommand = "${pkgs.difftastic}/bin/difft --color=always --display=inline"; }];
   };
 }
