@@ -2,13 +2,6 @@ unalias ls  2> /dev/null
 unalias ll  2> /dev/null
 unalias lsa 2> /dev/null
 
-# Notify mac PATH pollution
-if grep --quiet '^[[:space:]]*[^#]' /etc/zprofile 2> /dev/null; then
-  echo "PATH: $PATH
-
-You might want to sudo --edit /etc/zprofile"
-fi
-
 nman() {
   if [ $# -ne 1 ]; then
     echo "Usage: nman <entry>" >&2
