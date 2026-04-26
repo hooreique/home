@@ -70,8 +70,6 @@
 
   home.file.".hushlogin".text = "";
 
-  home.file."omz-custom/themes/hoobira.zsh-theme".source = ./hoobira.zsh-theme;
-
   xdg.configFile."zellij/config.kdl".source = ./zellij.${
     if system == "aarch64-darwin" then "mac" else "win"
   }.kdl;
@@ -103,14 +101,14 @@
     dotDir = "${config.xdg.configHome}/zsh";
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
-    oh-my-zsh = {
-      enable = true; theme = "hoobira"; custom = "$HOME/omz-custom";
-    };
+    plugins = [
+      {
+        name = "powerlevel10k";  src = pkgs.zsh-powerlevel10k;
+        file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+      }
+    ];
     envExtra = ''
-      # Nix (Single user env prefered)
-      if [[ -f ~/.nix-profile/etc/profile.d/nix.sh ]]; then
-        source ~/.nix-profile/etc/profile.d/nix.sh
-      elif [[ -f /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh ]]; then
+      if [[ -f /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh ]]; then
         source /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
       fi
 
@@ -119,7 +117,21 @@
         ${pkgs.openssh}/bin/ssh-keygen -t ed25519 -f ~/.ssh/host_ed25519 -N ""
       fi
     '';
-    initContent = builtins.readFile ./zshrc;
+    initContent = ''
+      source ${./functions.zsh}
+
+      # Unalias unwanted zsh builtin ls alias
+      unalias ls  2> /dev/null
+      unalias ll  2> /dev/null
+      unalias lsa 2> /dev/null
+
+      # Run extra rc
+      if [[ -f ~/init.zsh ]]; then
+        source ~/init.zsh
+      fi
+
+      source ${./p10k.zsh}
+    '';
     shellAliases = {
       denv = ''nix develop --command -- "${pkgs.uutils-coreutils}/bin/uutils-env" SHELL="${pkgs.zsh}/bin/zsh"'';
       uenv = ''NIXPKGS_ALLOW_UNFREE=1 nix develop --impure --command -- "${pkgs.uutils-coreutils}/bin/uutils-env" SHELL="${pkgs.zsh}/bin/zsh"'';
