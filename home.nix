@@ -1,4 +1,4 @@
-{ config, pkgs, system, username, ... }:
+{ config, pkgs, username, ... }:
 
 {
   nix = {
@@ -19,7 +19,7 @@
   };
 
   home.username = username;
-  home.homeDirectory = if system == "aarch64-darwin"
+  home.homeDirectory = if pkgs.stdenv.isDarwin
     then "/Users/${username}" else "/home/${username}";
   home.stateVersion = "25.11";
 
@@ -71,7 +71,7 @@
   home.file.".hushlogin".text = "";
 
   xdg.configFile."zellij/config.kdl".source = ./zellij.${
-    if system == "aarch64-darwin" then "mac" else "win"
+    if pkgs.stdenv.isDarwin then "mac" else "win"
   }.kdl;
   xdg.configFile."zellij/layouts/compact.kdl".text = ''
     layout {

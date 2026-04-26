@@ -19,8 +19,11 @@
             (final: prev: { fall = inputs.fall.packages.${system}.default; })
           ];
         };
-        extraSpecialArgs = { inherit system; inherit username; };
-        modules = [ ./home.nix ];
+        extraSpecialArgs = { inherit username; };
+        modules = [
+          ./home.nix
+          ./home-darwin.nix
+        ];
       };
     };
   });
