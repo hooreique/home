@@ -6,11 +6,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1777199039,
-        "narHash": "sha256-mvRW6ffiXeQUEUmA+O/4Uij8Cx9e6GgCRoai+kXzfEg=",
+        "lastModified": 1777210762,
+        "narHash": "sha256-UF2+rXucxBsA6a8QRkIhod57XnR1zBobItaq7JYvOX0=",
         "owner": "hooreique",
         "repo": "fall",
-        "rev": "cc2ad57d19169806cc997dd3be7adbf0125c879d",
+        "rev": "22fbf441904598b887f0f3a8179881628aa92ca8",
         "type": "github"
       },
       "original": {
