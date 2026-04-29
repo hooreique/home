@@ -39,6 +39,7 @@
     vscode-langservers-extracted # vscode-json-language-server
     vscode-js-debug # js-debug
     yaml-language-server
+    lemminx # language server for xml
   ];
 
   home.sessionVariables = {
