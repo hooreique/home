@@ -17,6 +17,8 @@
         <key>invisibles</key><string>#5a6477</string>
         <key>findHighlight</key><string>#a5e179</string>
         <key>findHighlightForeground</key><string>#2a2f38</string>
+        <key>gutter</key><string>#2a2f38</string>
+        <key>gutterForeground</key><string>#828a9a</string>
       </dict>
     </dict>
 
