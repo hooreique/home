@@ -1,16 +1,12 @@
-{ config, pkgs, username, ... }:
+{ config, pkgs, my-pkgs, ... }:
 
 {
-  home.username = username;
-  home.homeDirectory = if pkgs.stdenv.isDarwin
-    then "/Users/${username}" else "/home/${username}";
   home.stateVersion = "25.11";
 
   home.packages = with pkgs; [
     # Dogfooding
-    fall
+    my-pkgs.fall  my-pkgs.hvim
 
-    nushell
     bash  lsof  less  gnused  perl  jq  entr
     openssh  openssl  curl  elinks
     dig                       # nslookup
@@ -21,33 +17,18 @@
     uutils-coreutils-noprefix # cat, cp, mkdir
     uutils-findutils          # find
     unixtools.watch
-    zellij  eza  difftastic
+    eza  zellij
     vim  neovim
-
-    # nix language server
-    nil
-
-    # for neovim
-    gcc  ripgrep  lua-language-server
-
-    # for nvim-treesitter
-    tree-sitter  nodejs_24
-
-    # for telescope
-    gnumake  fd
-
-    vscode-langservers-extracted # vscode-json-language-server
-    vscode-js-debug # js-debug
-    yaml-language-server
-    lemminx # language server for xml
+    fd  ripgrep
+    difftastic
+    nushell
   ];
 
   home.sessionVariables = {
     LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
     SHELL = "${pkgs.zsh}/bin/zsh";
-    EDITOR = "${pkgs.neovim}/bin/nvim";
-    VISUAL = "${pkgs.neovim}/bin/nvim";
-    NVIM_APPNAME = "hoovim";
+    EDITOR = "${my-pkgs.hvim}/bin/hvim";
+    VISUAL = "${my-pkgs.hvim}/bin/hvim";
     LANG = "en_US.UTF-8";
     LC_CTYPE = "en_US.UTF-8";
   };
@@ -168,15 +149,15 @@
   programs.git = {
     enable = true;
     settings = {
-      user.name           = "Song Jeyeong";
-      user.email          = "46372718+hooreique@users.noreply.github.com";
-      user.signingKey     = "~/.ssh/id_ed25519";
-      gpg.format          = "ssh";
-      gpg.ssh.program     = "${pkgs.openssh}/bin/ssh-keygen";
-      commit.gpgSign      = true;
-      rerere.enabled      = true;
-      diff.tool           = "neovim";
-      difftool.neovim.cmd = ''${pkgs.neovim}/bin/nvim -d "$LOCAL" "$REMOTE"'';
+      user.name         = "Song Jeyeong";
+      user.email        = "46372718+hooreique@users.noreply.github.com";
+      user.signingKey   = "~/.ssh/id_ed25519";
+      gpg.format        = "ssh";
+      gpg.ssh.program   = "${pkgs.openssh}/bin/ssh-keygen";
+      commit.gpgSign    = true;
+      rerere.enabled    = true;
+      diff.tool         = "hvim";
+      difftool.hvim.cmd = ''${my-pkgs.hvim}/bin/hvim -d "$LOCAL" "$REMOTE"'';
     };
   };
 
