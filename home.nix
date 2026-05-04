@@ -1,14 +1,14 @@
 { config, pkgs, my-pkgs, ... }:
 
 {
-  home.stateVersion = "25.11";
+  home.stateVersion = "26.05";
 
   home.packages = with pkgs; [
     # Dogfooding
     my-pkgs.fall  my-pkgs.hvim
 
     bash  lsof  less  gnused  perl  jq  entr
-    openssh  openssl  curl  elinks
+    openssh  openssl  curl
     dig                       # nslookup
     inetutils                 # telnet
     diffutils                 # cmp
