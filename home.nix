@@ -113,6 +113,9 @@
       sj = "zellij";
       sn = "zellij --session";
       sa = "zellij attach";
+      se = "zellij action edit-scrollback";
+      sd = "zellij action dump-screen";
+      ss = "zellij action dump-screen --full";
       p = "/usr/bin/pbpaste";
       putil = ''fzf <<< "${builtins.readFile ./posix-utils.txt}"'';
     };
