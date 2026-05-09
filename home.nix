@@ -7,7 +7,7 @@
     # Dogfooding
     my-pkgs.fall  my-pkgs.hvim  my-pkgs.saseo
 
-    bash  lsof  less  gnused  perl  jq  entr
+    bash  man  lsof  less  gnused  perl  jq  entr
     openssh  openssl  curl
     dig                       # nslookup
     inetutils                 # telnet
