@@ -11,9 +11,9 @@ diffless() {
   diff --color=always --unified "$1" "$2" | less
 }
 
-nman() {
+hman() {
   if [ $# -ne 1 ]; then
-    echo "Usage: nman <entry>" >&2
+    echo "Usage: hman <entry>" >&2
     return 1
   fi
 
@@ -23,7 +23,7 @@ nman() {
   fi
 
   if man --where "$1" >/dev/null 2>&1; then
-    nvim +"Man $1 | wincmd w | bdelete"
+    hvim +"Man $1 | wincmd w | bdelete"
   else
     echo "Entry not found: $1" >&2
     return 1
