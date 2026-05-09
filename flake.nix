@@ -7,12 +7,14 @@
     home-manager.url = "github:nix-community/home-manager";
     fall.url         = "github:hooreique/fall";
     hvim.url         = "github:hooreique/hvim";
+    saseo.url        = "github:hooreique/saseo";
   };
 
   outputs = inputs: inputs.flake-utils.lib.eachSystem ["x86_64-linux" "aarch64-darwin" "aarch64-linux"] (system: let
-    username = "song";
-    my-pkgs.fall = inputs.fall.packages.${system}.default;
-    my-pkgs.hvim = inputs.hvim.packages.${system}.default;
+    username      = "song";
+    my-pkgs.fall  = inputs.fall.packages.${system}.default;
+    my-pkgs.hvim  = inputs.hvim.packages.${system}.default;
+    my-pkgs.saseo = inputs.saseo.packages.${system}.default;
   in {
     packages.homeConfigurations.${username} = inputs.home-manager.lib.homeManagerConfiguration {
       pkgs = inputs.nixpkgs.legacyPackages.${system};

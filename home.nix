@@ -5,7 +5,7 @@
 
   home.packages = with pkgs; [
     # Dogfooding
-    my-pkgs.fall  my-pkgs.hvim
+    my-pkgs.fall  my-pkgs.hvim  my-pkgs.saseo
 
     bash  lsof  less  gnused  perl  jq  entr
     openssh  openssl  curl
