@@ -239,11 +239,11 @@
         "nixpkgs": "nixpkgs_5"
       },
       "locked": {
-        "lastModified": 1778350643,
-        "narHash": "sha256-kkgmd0pbwmplIVl+a+jQ1LwkTuqbTSCnn/DswpM/N24=",
+        "lastModified": 1778597107,
+        "narHash": "sha256-Wk57v5RDdaHXGECrey21cOojUkaMRtSjLA1FavWpGdk=",
         "owner": "hooreique",
         "repo": "saseo",
-        "rev": "4f9cd9924ecbc649a7c291b0d6fe1e672cfcd9ba",
+        "rev": "bf5d47df11b60e22f557cacbe1162c346c3bafcd",
         "type": "github"
       },
       "original": {
