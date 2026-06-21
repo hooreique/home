@@ -1,6 +1,8 @@
 { pkgs, lib, ... }:
 
 lib.mkIf pkgs.stdenv.isDarwin {
+  home.packages = [ pkgs.macism ];
+
   targets.darwin.defaults = {
     NSGlobalDomain.NSWindowShouldDragOnGesture = true;
     NSGlobalDomain.KeyRepeat = 2; # 2..120 (lower is faster)
