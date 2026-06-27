@@ -8,6 +8,7 @@
     fall.url         = "github:hooreique/fall";
     hvim.url         = "github:hooreique/hvim";
     saseo.url        = "github:hooreique/saseo";
+    hisle.url        = "github:hooreique/hisle";
   };
 
   outputs = inputs: inputs.flake-utils.lib.eachSystem ["x86_64-linux" "aarch64-darwin" "aarch64-linux"] (system: let
@@ -17,13 +18,17 @@
     my-pkgs.saseo = inputs.saseo.packages.${system}.default;
   in {
     packages.homeConfigurations.${username} = inputs.home-manager.lib.homeManagerConfiguration {
-      pkgs = inputs.nixpkgs.legacyPackages.${system};
+      pkgs = import inputs.nixpkgs {
+        inherit system;
+        overlays = [ inputs.hisle.overlay ];
+      };
       extraSpecialArgs = { inherit my-pkgs; };
       modules = [
-         {
-           home.username = username;
-           home.homeDirectory = if system == "aarch64-darwin" then "/Users/${username}" else "/home/${username}";
-         }
+        inputs.hisle.homeManagerModule
+        {
+          home.username = username;
+          home.homeDirectory = if system == "aarch64-darwin" then "/Users/${username}" else "/home/${username}";
+        }
         ./home.nix
         ./home-darwin.nix
       ];
