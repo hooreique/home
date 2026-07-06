@@ -1,7 +1,7 @@
 { config, pkgs, my-pkgs, ... }:
 
 {
-  home.stateVersion = "26.05";
+  home.stateVersion = "26.11";
 
   home.packages = with pkgs; [
     # Dogfooding
@@ -54,10 +54,10 @@
   programs.ssh = {
     enable = true;
     enableDefaultConfig = false;
-    matchBlocks."*" = {
-      identityFile = "~/.ssh/id_ed25519";
-      serverAliveInterval = 60;
-      serverAliveCountMax = 3;
+    settings."*" = {
+      IdentityFile = "~/.ssh/id_ed25519";
+      ServerAliveInterval = 60;
+      ServerAliveCountMax = 3;
     };
   };
 
@@ -121,7 +121,12 @@
     };
   };
 
-  programs.fzf = { enable = true; enableZshIntegration = true; };
+  programs.fzf = {
+    enable = true;
+    enableZshIntegration = true;
+    # fzf 와 atuin 이 Ctrl-R 을 동시에 바인딩하므로, atuin이 소유하도록 fzf 바인딩 해제
+    historyWidget.zsh.command = "";
+  };
 
   programs.atuin = { enable = true; enableZshIntegration = true; };
 
