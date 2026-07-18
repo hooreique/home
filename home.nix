@@ -20,7 +20,7 @@
     eza  zellij
     vim  neovim
     fd  ripgrep
-    difftastic
+    delta  difftastic
     nushell
   ];
 
@@ -102,6 +102,8 @@
       denv = ''nix develop --command -- "${pkgs.uutils-coreutils}/bin/uutils-env" SHELL="${pkgs.zsh}/bin/zsh"'';
       uenv = ''NIXPKGS_ALLOW_UNFREE=1 nix develop --impure --command -- "${pkgs.uutils-coreutils}/bin/uutils-env" SHELL="${pkgs.zsh}/bin/zsh"'';
       gat = "GIT_PAGER=cat git";
+      galta = ''GIT_PAGER="${pkgs.delta}/bin/delta --paging=never" git diff'';
+      gelta = "GIT_PAGER=${pkgs.delta}/bin/delta git diff";
       gafft = "GIT_PAGER=cat GIT_EXTERNAL_DIFF=${pkgs.difftastic}/bin/difft git diff";
       gifft = "GIT_EXTERNAL_DIFF=${pkgs.difftastic}/bin/difft git diff";
       grep = "/usr/bin/grep --color=auto";
@@ -169,14 +171,30 @@
       diff.tool         = "hvim";
       difftool.hvim.cmd = ''${my-pkgs.hvim}/bin/hvim -d "$LOCAL" "$REMOTE"'';
     };
+    settings.delta = {
+      syntax-theme = "sonokai";
+      line-numbers = true;
+      line-numbers-left-style  = "#5a6477";  line-numbers-minus-style = "#ff6578";
+      line-numbers-right-style = "#5a6477";  line-numbers-plus-style  = "#9dd274";
+      line-numbers-zero-style  = "#5a6477";
+      minus-style      = ''syntax "#3d343a"'';  plus-style      = ''syntax "#313936"'';
+      minus-emph-style = ''syntax "#55393d"'';  plus-emph-style = ''syntax "#394634"'';
+      commit-style = "bold #ba9cf3";
+      file-style = "bold #72cce8";
+      file-decoration-style = "#424b5b ul";
+      hunk-header-style = "file line-number syntax";
+      hunk-header-decoration-style = "none";
+      hunk-header-file-style = "#72cce8";
+      hunk-header-line-number-style = "#ba9cf3";
+    };
   };
 
   programs.lazygit = {
     enable = true;
+    settings.git.overrideGpg = true;
+    settings.git.pagers = [{ pager = "${pkgs.delta}/bin/delta --paging=never"; }];
     settings.gui = {
       scrollHeight = 3; nerdFontsVersion = "3"; filterMode = "fuzzy";
     };
-    settings.git.overrideGpg = true;
-    settings.git.pagers = [{ externalDiffCommand = "${pkgs.difftastic}/bin/difft --color=always --display=inline"; }];
   };
 }
