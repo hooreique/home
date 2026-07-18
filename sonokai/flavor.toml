@@ -90,7 +90,7 @@ rules = [
   { mime = "application/{,g}zip", fg = "#ff6578" },  # red
   { mime = "application/x-{tar,bzip*,xz,rar,7z-compressed}", fg = "#ff6578" },
   { mime = "application/{pdf,doc,rtf,vnd.*}", fg = "#72cce8" },
-  { name = "*", is = "orphan",    fg = "#ff6578" },
-  { name = "*", is = "exec",      fg = "#9dd274" },
-  { name = "*/",                  fg = "#7ad5f1" },  # cyan-ish
+  { url = "*", is = "orphan", fg = "#ff6578" },
+  { url = "*", is = "exec",   fg = "#9dd274" },
+  { url = "*/",               fg = "#7ad5f1" },  # cyan-ish
 ]
