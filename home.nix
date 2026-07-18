@@ -196,5 +196,9 @@
     settings.gui = {
       scrollHeight = 3; nerdFontsVersion = "3"; filterMode = "fuzzy";
     };
+    settings.gui.theme = {
+      activeBorderColor = [ "white" ];
+      inactiveBorderColor = [ "#828a9a" ];
+    };
   };
 }
