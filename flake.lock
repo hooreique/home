@@ -96,11 +96,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1783954646,
-        "narHash": "sha256-6gJUm7oBHumq/2OxHyES8S1mtYhNguoTlT5K6As73u0=",
+        "lastModified": 1784356732,
+        "narHash": "sha256-csX5XiJsLz2IlAaSwr7vZJzWYOnw+XNpjpHM3g8lwpc=",
         "owner": "hooreique",
         "repo": "hisle",
-        "rev": "ded8a30cb20d0be1d2657c8f000d9f303bba0768",
+        "rev": "3b6d54e600abba50d7e8972afcc1fd55e3328381",
         "type": "github"
       },
       "original": {
