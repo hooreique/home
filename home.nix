@@ -12,7 +12,6 @@
     dig                       # nslookup
     inetutils                 # telnet
     diffutils                 # cmp
-    ncurses                   # clear, infocmp, tic
     uutils-coreutils          # uutils-env
     uutils-coreutils-noprefix # cat, cp, mkdir
     uutils-findutils          # find
@@ -25,7 +24,6 @@
   ];
 
   home.sessionVariables = {
-    LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
     SHELL = "${pkgs.zsh}/bin/zsh";
     EDITOR = "${my-pkgs.hvim}/bin/hvim";
     VISUAL = "${my-pkgs.hvim}/bin/hvim";
@@ -95,7 +93,6 @@
       gelta = "GIT_PAGER=${pkgs.delta}/bin/delta git diff";
       gafft = "GIT_PAGER=cat GIT_EXTERNAL_DIFF=${pkgs.difftastic}/bin/difft git diff";
       gifft = "GIT_EXTERNAL_DIFF=${pkgs.difftastic}/bin/difft git diff";
-      grep = "/usr/bin/grep --color=auto";
       ls = ''"${pkgs.uutils-coreutils}/bin/uutils-ls" --color=auto'';
       l = "eza --almost-all --icons=auto --oneline";
       la = "eza --almost-all --long --icons=auto --time-style=iso";
@@ -108,7 +105,7 @@
       sd = "zellij action dump-screen";
       ss = "zellij action dump-screen --full";
       hpr = ''herdr pane read "$HERDR_PANE_ID" --source recent-unwrapped --lines 1000'';
-      # p = "/usr/bin/pbpaste";
+      p = "wl-paste";
       putil = ''fzf <<< "${builtins.readFile ./posix-utils.txt}"'';
     };
   };

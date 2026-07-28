@@ -1,0 +1,66 @@
+(defcfg
+  process-unmapped-keys no
+  linux-device-detect-mode keyboard-only
+  linux-continue-if-no-devs-found yes
+)
+
+(defsrc
+  esc f1 f2 f3 f4 f5 f6 f7 f8 f9 f10 f11 f12 del
+  grv 1 2 3 4 5 6 7 8 9 0 - = bspc
+  tab q w e r t y u i o p [ ] \
+  caps a s d f g h j k l ; ' ret
+  lsft z x c v b n m , . / rsft
+  lctl lmet lalt spc ralt rmet rctl
+  up down lft rght home end pgup pgdn
+  kp0 kp1 f20
+)
+
+(defalias
+  escmod
+    (tap-hold-press
+      200
+      200
+      esc
+      (layer-while-held mod))
+
+  spacemod
+    (tap-hold-press
+      200
+      200
+      spc
+      (layer-while-held mod))
+
+  rctrldel
+    (tap-hold-press
+      200
+      200
+      del
+      rctl)
+
+  w_u (🖱☸↑ 50 120)
+  w_d (🖱☸↓ 50 120)
+  w_l (🖱☸← 50 120)
+  w_r (🖱☸→ 50 120)
+)
+
+(deflayer base
+  _ _ _ _ _ _ _ _ _ _ _ _ _ _
+  _ _ _ _ _ _ _ _ _ _ _ _ _ _
+  _ _ _ _ _ _ _ _ _ _ _ _ _ _
+  @escmod _ _ _ _ _ _ _ _ _ _ _ _
+  lsft _ _ _ _ _ _ _ _ _ _ rsft
+  _ _ _ _ _ _ @rctrldel
+  _ _ _ _ _ _ _ _
+  @spacemod @escmod _
+)
+
+(deflayer mod
+  _ _ _ _ _ _ _ _ _ _ _ _ _ _
+  esc f1 f2 f3 f4 f5 f6 f7 f8 f9 f10 f11 f12 del
+  _ bspc del @w_u _ _ _ pgup up pgdn _ _ _ lrld
+  _ ret @w_l @w_d @w_r _ home lft down rght end _ (multi lsft ret)
+  lsft _ _ _ _ _ _ _ _ _ (multi lalt home) rsft
+  _ _ _ _ ralt rmet rctl
+  _ _ _ _ _ _ _ _
+  _ _ _
+)
