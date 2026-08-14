@@ -195,6 +195,11 @@
     enable = true;
     settings.git.overrideGpg = true;
     settings.git.pagers = [{ pager = "${pkgs.delta}/bin/delta --paging=never"; }];
+    settings.os = {
+      edit              = "${my-pkgs.hvim}/bin/hvim {{filename}}";
+      editAtLine        = "${my-pkgs.hvim}/bin/hvim +{{line}} {{filename}}";
+      editAtLineAndWait = "${my-pkgs.hvim}/bin/hvim +{{line}} {{filename}}";
+    };
     settings.gui = {
       scrollHeight = 3; nerdFontsVersion = "3"; filterMode = "fuzzy";
     };
