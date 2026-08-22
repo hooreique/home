@@ -7,7 +7,6 @@
     fall.url         = "github:hooreique/fall";
     hvim.url         = "github:hooreique/hvim";
     saseo.url        = "github:hooreique/saseo";
-    hisle.url        = "github:hooreique/hisle";
   };
 
   outputs = inputs: let
@@ -20,12 +19,10 @@
       pkgs = import inputs.nixpkgs {
         inherit system;
         overlays = [
-          inputs.hisle.overlay
         ];
       };
       extraSpecialArgs = { inherit my-pkgs; };
       modules = [
-        inputs.hisle.homeManagerModule
         {
           home.username = "song";
           home.homeDirectory = "/home/song";
