@@ -3,7 +3,6 @@
 
   inputs = {
     nixpkgs.url      = "github:NixOS/nixpkgs/nixos-unstable";
-    flake-utils.url  = "github:numtide/flake-utils";
     home-manager.url = "github:nix-community/home-manager";
     fall.url         = "github:hooreique/fall";
     hvim.url         = "github:hooreique/hvim";
@@ -11,27 +10,28 @@
     hisle.url        = "github:hooreique/hisle";
   };
 
-  outputs = inputs: inputs.flake-utils.lib.eachSystem ["x86_64-linux" "aarch64-darwin" "aarch64-linux"] (system: let
-    username      = "song";
+  outputs = inputs: let
+    system = "aarch64-linux";
     my-pkgs.fall  = inputs.fall.packages.${system}.default;
     my-pkgs.hvim  = inputs.hvim.packages.${system}.default;
     my-pkgs.saseo = inputs.saseo.packages.${system}.default;
   in {
-    packages.homeConfigurations.${username} = inputs.home-manager.lib.homeManagerConfiguration {
+    packages.${system}.homeConfigurations.song = inputs.home-manager.lib.homeManagerConfiguration {
       pkgs = import inputs.nixpkgs {
         inherit system;
-        overlays = [ inputs.hisle.overlay ];
+        overlays = [
+          inputs.hisle.overlay
+        ];
       };
       extraSpecialArgs = { inherit my-pkgs; };
       modules = [
         inputs.hisle.homeManagerModule
         {
-          home.username = username;
-          home.homeDirectory = if system == "aarch64-darwin" then "/Users/${username}" else "/home/${username}";
+          home.username = "song";
+          home.homeDirectory = "/home/song";
         }
         ./home.nix
-        ./home-darwin.nix
       ];
     };
-  });
+  };
 }

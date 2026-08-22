@@ -36,7 +36,7 @@
   home.file.".hushlogin".text = "";
 
   xdg.configFile."zellij/config.kdl".source = ./zellij.${
-    if pkgs.stdenv.isDarwin then "mac" else "win"
+    if pkgs.stdenv.hostPlatform.isDarwin then "mac" else "win"
   }.kdl;
   xdg.configFile."zellij/layouts/compact.kdl".text = ''
     layout {
