@@ -108,7 +108,7 @@
       sd = "zellij action dump-screen";
       ss = "zellij action dump-screen --full";
       hpr = ''herdr pane read "$HERDR_PANE_ID" --source recent-unwrapped --lines 1000'';
-      # p = "/usr/bin/pbpaste";
+      p = "/usr/bin/pbpaste";
       putil = ''fzf <<< "${builtins.readFile ./posix-utils.txt}"'';
     };
   };

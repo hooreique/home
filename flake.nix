@@ -7,10 +7,11 @@
     fall.url         = "github:hooreique/fall";
     hvim.url         = "github:hooreique/hvim";
     saseo.url        = "github:hooreique/saseo";
+    hisle.url        = "github:hooreique/hisle";
   };
 
   outputs = inputs: let
-    system = "aarch64-linux";
+    system = "aarch64-darwin";
     my-pkgs.fall  = inputs.fall.packages.${system}.default;
     my-pkgs.hvim  = inputs.hvim.packages.${system}.default;
     my-pkgs.saseo = inputs.saseo.packages.${system}.default;
@@ -19,15 +20,18 @@
       pkgs = import inputs.nixpkgs {
         inherit system;
         overlays = [
+          inputs.hisle.overlay
         ];
       };
       extraSpecialArgs = { inherit my-pkgs; };
       modules = [
+        inputs.hisle.homeManagerModule
         {
           home.username = "song";
-          home.homeDirectory = "/home/song";
+          home.homeDirectory = "/Users/song";
         }
         ./home.nix
+        ./home-macbook.nix
       ];
     };
   };
