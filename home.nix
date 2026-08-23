@@ -194,6 +194,8 @@
   programs.lazygit = {
     enable = true;
     settings.git.overrideGpg = true;
+    # Both entries are intentional; remove pagers once lazygit supports diffRenderers.
+    settings.git.pagers        = [{ pager   = "${pkgs.delta}/bin/delta --paging=never"; }];
     settings.git.diffRenderers = [{ command = "${pkgs.delta}/bin/delta --paging=never"; }];
     settings.os = {
       edit              = "${my-pkgs.hvim}/bin/hvim {{filename}}";
