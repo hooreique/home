@@ -119,7 +119,7 @@
       se = "zellij action edit-scrollback";
       sd = "zellij action dump-screen";
       ss = "zellij action dump-screen --full";
-      hpr = ''nix run github:numtide/llm-agents.nix#herdr -- pane read "$HERDR_PANE_ID" --source recent --lines 999999'';
+      hpr = ''herdr pane read "$HERDR_PANE_ID" --source recent --lines 999999'';
       p = "/usr/bin/pbpaste";
       putil = ''fzf <<< "${builtins.readFile ./posix-utils.txt}"'';
     };
