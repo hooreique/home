@@ -21,7 +21,9 @@
         overlays = [
         ];
       };
-      extraSpecialArgs = { inherit my-pkgs; };
+      extraSpecialArgs = {
+        inherit my-pkgs;
+      };
       modules = [
         {
           home.username = "song";
