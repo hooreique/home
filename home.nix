@@ -33,6 +33,13 @@
     LC_CTYPE = "en_US.UTF-8";
   };
 
+  services.home-manager.autoExpire = {
+    enable = true;
+    timestamp = "-90 days";
+    frequency = "weekly";
+    store.cleanup = false;
+  };
+
   home.file.".hushlogin".text = "";
 
   xdg.enable = true;
