@@ -8,7 +8,7 @@
     my-pkgs.fall  my-pkgs.hvim  my-pkgs.saseo
 
     bash  man  less  gnused  perl  jq
-    openssh  openssl  curl
+    curl  openssl  openssh  mosh
     dig                       # nslookup
     inetutils                 # telnet
     diffutils                 # cmp
