@@ -15,7 +15,7 @@
     my-pkgs.hvim  = inputs.hvim.packages.${system}.default;
     my-pkgs.saseo = inputs.saseo.packages.${system}.default;
   in {
-    packages.${system}.homeConfigurations.song = inputs.home-manager.lib.homeManagerConfiguration {
+    homeConfigurations.song = inputs.home-manager.lib.homeManagerConfiguration {
       pkgs = import inputs.nixpkgs {
         inherit system;
         overlays = [
