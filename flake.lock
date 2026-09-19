@@ -5,11 +5,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1787384732,
-        "narHash": "sha256-PPhLqKx8hCO68+6iJZONJrHA/u0YDIoE/HVGPSXZqUs=",
+        "lastModified": 1789870523,
+        "narHash": "sha256-mvCitVWS/rtRLxfWAA2F2pg4N9qBLKiSf6tJGPYSbZA=",
         "owner": "hooreique",
         "repo": "fall",
-        "rev": "b02769b36be120e2e980986d0403be0c9943c601",
+        "rev": "de0927b61b977ad14ddbbdc90a1339dc6a0f42b3",
         "type": "github"
       },
       "original": {
@@ -41,11 +41,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1787384143,
-        "narHash": "sha256-PLdupxLtSsSHzv806kCf1sksusVZ+ZRocCcel2FMa/s=",
+        "lastModified": 1789869285,
+        "narHash": "sha256-dC9tLBNBN+qnKio9yi5USELq/BgjxX4s7pEhlzMPaO8=",
         "owner": "hooreique",
         "repo": "hvim",
-        "rev": "9d16d438b1fa3a9932885e7b15bb98e87bb35d8f",
+        "rev": "9addc4c2624ae27fc0e0760ce7a684e4ffd156ed",
         "type": "github"
       },
       "original": {
@@ -148,11 +148,11 @@
         "nixpkgs": "nixpkgs_5"
       },
       "locked": {
-        "lastModified": 1787387108,
-        "narHash": "sha256-0S38gNAkyDpY9+3xBB1MX8okgs0nUZBGMwj5uFQA/0c=",
+        "lastModified": 1789869473,
+        "narHash": "sha256-GZBRES9qj+/9s/rnv9W/9ANIHaLuafv2/dO3u0+vTFQ=",
         "owner": "hooreique",
         "repo": "saseo",
-        "rev": "261fed67b075f7e9a9c8ad10998ee63095f5300f",
+        "rev": "d9744acfd764dc396f2bbbd8e370280110447f75",
         "type": "github"
       },
       "original": {

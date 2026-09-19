@@ -1,11 +1,11 @@
-{ config, pkgs, my-pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   home.stateVersion = "26.11";
 
   home.packages = with pkgs; [
     # Dogfooding
-    my-pkgs.fall  my-pkgs.hvim  my-pkgs.saseo
+    fall  hvim  saseo
 
     bash  man  less  gnused  perl  jq
     curl  openssl  openssh  mosh
@@ -28,8 +28,8 @@
   home.sessionVariables = {
     LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
     SHELL = "${pkgs.zsh}/bin/zsh";
-    EDITOR = "${my-pkgs.hvim}/bin/hvim";
-    VISUAL = "${my-pkgs.hvim}/bin/hvim";
+    EDITOR = "${pkgs.hvim}/bin/hvim";
+    VISUAL = "${pkgs.hvim}/bin/hvim";
     LANG = "en_US.UTF-8";
     LC_CTYPE = "en_US.UTF-8";
   };
@@ -267,7 +267,7 @@
       commit.gpgSign    = true;
       rerere.enabled    = true;
       diff.tool         = "hvim";
-      difftool.hvim.cmd = ''${my-pkgs.hvim}/bin/hvim -d "$LOCAL" "$REMOTE"'';
+      difftool.hvim.cmd = ''${pkgs.hvim}/bin/hvim -d "$LOCAL" "$REMOTE"'';
     };
     settings.delta = {
       syntax-theme = "sonokai";
@@ -294,9 +294,9 @@
     settings.git.pagers        = [{ pager   = "${pkgs.delta}/bin/delta --paging=never"; }];
     settings.git.diffRenderers = [{ command = "${pkgs.delta}/bin/delta --paging=never"; }];
     settings.os = {
-      edit              = "${my-pkgs.hvim}/bin/hvim {{filename}}";
-      editAtLine        = "${my-pkgs.hvim}/bin/hvim +{{line}} {{filename}}";
-      editAtLineAndWait = "${my-pkgs.hvim}/bin/hvim +{{line}} {{filename}}";
+      edit              = "${pkgs.hvim}/bin/hvim {{filename}}";
+      editAtLine        = "${pkgs.hvim}/bin/hvim +{{line}} {{filename}}";
+      editAtLineAndWait = "${pkgs.hvim}/bin/hvim +{{line}} {{filename}}";
     };
     settings.gui = {
       scrollHeight = 3; nerdFontsVersion = "3"; filterMode = "fuzzy";

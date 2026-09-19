@@ -11,18 +11,17 @@
 
   outputs = inputs: let
     system = "aarch64-linux";
-    my-pkgs.fall  = inputs.fall.packages.${system}.default;
-    my-pkgs.hvim  = inputs.hvim.packages.${system}.default;
-    my-pkgs.saseo = inputs.saseo.packages.${system}.default;
   in {
     homeConfigurations.song = inputs.home-manager.lib.homeManagerConfiguration {
       pkgs = import inputs.nixpkgs {
         inherit system;
         overlays = [
+          inputs.fall.overlays.pinned
+          inputs.hvim.overlays.pinned
+          inputs.saseo.overlays.pinned
         ];
       };
       extraSpecialArgs = {
-        inherit my-pkgs;
       };
       modules = [
         {
