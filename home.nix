@@ -22,6 +22,7 @@
     fd  ripgrep
     delta  difftastic
     eza  nushell
+    gh
   ];
 
   home.sessionVariables = {
