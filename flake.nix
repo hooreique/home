@@ -29,6 +29,7 @@
           home.homeDirectory = "/home/song";
         }
         ./home.nix
+        ./home-linux.nix
       ];
     };
   };
